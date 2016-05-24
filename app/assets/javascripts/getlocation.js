@@ -7,8 +7,11 @@ function getLocation() {
 }
 
 function showPosition(position) {
-	$('.latitude').val(position.coords.latitude);
-	$('.longitude').val(position.coords.longitude);
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	$("#user_latitude").val(latitude);
+	$("#user_longitude").val(longitude);
+
 }
 
 
