@@ -9,16 +9,4 @@
 	<%= submit_tag 'Filtar' %>
 <% end %>
 
-<table id="products">
-  <tr>
-    <th><%= sort_link @q, :name, "Product Name" %></th>
-    <th><%= sort_link @q, :descriotion, "Description" %></th>
-    <th><%= sort_link @q, :price, "Price" %></th>
-  </tr>
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-  </tr>
-<% end %>
+<%= render partial: "products/product" %>
