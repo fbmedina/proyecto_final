@@ -7,6 +7,7 @@
       <th>Price</th>
       <th>Stock</th>
       <th>Store</th>
+      <th>Tags</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,11 @@
         <td><%= product.price %></td>
         <td><%= product.stock %></td>
         <td><%= link_to product.store, product.store %></td>
+        <td>
+          <% product.tags.each do |tag| %>
+            #<%= tag %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', [product.store, product] %></td>
         <td><%= link_to 'Edit', edit_store_product_path(product.store, product) %></td>
         <td><%= link_to 'Destroy', [product.store, product], method: :delete, data: { confirm: 'Are you sure?' } %></td>
