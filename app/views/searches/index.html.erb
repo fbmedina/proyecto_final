@@ -1,37 +1,12 @@
 <h1>Searches#index</h1>
-<%= search_form_for @q, url: search_searches_path, html: { method: :post } do |f| %>
-	<div class="field">
-		<%= f.label :price_gteq, "Price between" %>
-	  	<%= f.search_field :price_gteq %>
-	  	<%= f.label :price_lteq, "and" %>
-	  	<%= f.search_field :price_lteq %>
-	</div>
-
-	<div class="actions">
-		<%= f.submit "search" %>
-	</div>	
-<% end %>
-
-<%= form_tag do %>
+<%= form_tag search_searches_path do %>
 	<div class="field">
 		<%= label_tag :distance %>
 		<%= number_field_tag :distance %>
 	</div>
-	<%= hidden_field_tag :latitude, nil, class: "latitude" %>
-	<%= hidden_field_tag :longitude, nil, class: "longitude" %>
+	<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
+	<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>
 	<%= submit_tag 'Filtar' %>
 <% end %>
 
-<table id="products">
-  <tr>
-    <th><%= sort_link @q, :name, "Product Name" %></th>
-    <th><%= sort_link @q, :descriotion, "Description" %></th>
-    <th><%= sort_link @q, :price, "Price" %></th>
-  </tr>
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-  </tr>
-<% end %>
+<%= render partial: "products/product" %>
