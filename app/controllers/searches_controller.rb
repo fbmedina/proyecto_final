@@ -4,13 +4,8 @@ class SearchesController < ApplicationController
     current_user.latitude = params[:latitude]
     current_user.longitude = params[:longitude]
     current_user.save
-    stations = Station.near([current_user.latitude, current_user.longitude], distance, :units => :km)
-    @products = []  
-    stations.each do |station|
-      station.products.each do |p|
-        @products << p
-      end
-    end
+    station_ids = Station.near([current_user.latitude, current_user.longitude], distance, :units => :km).collect(&:id)
+    @products = Product.eager_load(:store => [:station_stores]).where("station_stores.station_id" => station_ids)
   end
 
   def show
