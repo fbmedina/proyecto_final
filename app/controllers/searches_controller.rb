@@ -1,11 +1,19 @@
 class SearchesController < ApplicationController
   def index
+    @products = Product.all
     distance = params[:distance].present? ? params[:distance] : 2
     current_user.latitude = params[:latitude]
     current_user.longitude = params[:longitude]
     current_user.save
     station_ids = Station.near([current_user.latitude, current_user.longitude], distance, :units => :km).collect(&:id)
-    @products = Product.eager_load(:store => [:station_stores]).where("station_stores.station_id" => station_ids)
+    
+    if params[:distance]
+      @products = Product.eager_load(:store => [:station_stores]).where("station_stores.station_id" => station_ids)
+    end
+    if params[:name]
+      @products = Product.search_by_name(params[:name])
+    end
+
   end
 
   def show
