@@ -6,8 +6,8 @@
 	</div>
 
 	<div class="field">
-		<%= label_tag :q, 'Filtrar' %>
-		<%= text_field_tag :q %>
+		<%= label_tag :key_word, 'Filtrar' %>
+		<%= text_field_tag :key_word %>
 	</div>
 
 	<div class="field">
@@ -16,6 +16,16 @@
 		<%= label_tag :second_price, 'and' %>
 		<%= text_field_tag :second_price %>
 	</div>
+
+	<div class="field">
+		<%= label_tag :tags, 'Tags' %>
+		<%= text_field_tag :tags %>
+	</div>
+
+	<div class="field">
+
+	</div>
+
 	<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
 	<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>
 	<%= submit_tag 'Filtar' %>
