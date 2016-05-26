@@ -9,6 +9,13 @@
 		<%= label_tag :q, 'Filtrar' %>
 		<%= text_field_tag :q %>
 	</div>
+
+	<div class="field">
+		<%= label_tag :first_price, 'Price between' %>
+		<%= text_field_tag :first_price %>
+		<%= label_tag :second_price, 'and' %>
+		<%= text_field_tag :second_price %>
+	</div>
 	<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
 	<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>
 	<%= submit_tag 'Filtar' %>

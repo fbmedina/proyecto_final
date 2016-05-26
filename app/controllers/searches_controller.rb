@@ -18,6 +18,12 @@ class SearchesController < ApplicationController
       # @products = @products.tagged_with(q, any: true)
     end
 
+    if params[:first_price].present? && params[:second_price].present?
+      first_price = params[:first_price]
+      second_price = params[:second_price]
+      @products = @products.where("(products.price) BETWEEN #{first_price} AND #{second_price}")
+    end
+
   end
 
   def show

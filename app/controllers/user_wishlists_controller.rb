@@ -5,7 +5,7 @@ class UserWishlistsController < ApplicationController
     @products = @user_wishlist.products    
   end
 
-  def add_to_wishlist
+  def add_to_user_wishlist
     @product = Product.find(params[:product_id])
     @user_wishlist = UserWishlist.find(params[:user_wishlist_id])
     @user_wishlist.product_wishlists.build(product: @product)
