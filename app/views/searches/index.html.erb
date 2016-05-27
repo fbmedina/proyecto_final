@@ -12,9 +12,9 @@
 
 	<div class="field">
 		<%= label_tag :first_price, 'Price between' %>
-		<%= text_field_tag :first_price %>
+		<%= number_field_tag :first_price, nil, step: 500 %>
 		<%= label_tag :second_price, 'and' %>
-		<%= text_field_tag :second_price %>
+		<%= number_field_tag :second_price, nil, step: 500 %>
 	</div>
 
 	<div class="field">
