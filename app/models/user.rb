@@ -2,14 +2,12 @@ class User < ActiveRecord::Base
   has_one :store, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  
   has_many :user_wishlists, dependent: :destroy
-  
   has_many :wishlists, through: :user_wishlists, dependent: :destroy
-  
   has_many :products, through: :user_wishlists
 
   after_create :create_wishlists
+  before_save :default_role
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -59,4 +57,7 @@ class User < ActiveRecord::Base
       end
     end
 
+    def default_role
+      self.role ||= 1
+    end
 end

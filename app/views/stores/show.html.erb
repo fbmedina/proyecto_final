@@ -53,7 +53,7 @@
 <%= render partial: "comments/comments_store", locals: {commentable: @store} %>
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
-<%= link_to 'Edit', edit_store_path(@store) %>
+<%= link_to 'Edit', edit_store_path(@store) if can? :edit, @store %>
 <%= link_to 'Back', stores_path %>
 
 <%= render partial: "products/product" %>
