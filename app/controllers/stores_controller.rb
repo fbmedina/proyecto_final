@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /stores
   # GET /stores.json
   def index
@@ -30,7 +30,6 @@ class StoresController < ApplicationController
   def create
     @store = Store.new(store_params)
     @store.user = current_user
-
 
     respond_to do |format|
       if @store.save

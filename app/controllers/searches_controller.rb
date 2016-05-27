@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  
   def index
     distance = params[:distance].present? ? params[:distance] : 2
     first_price = params[:first_price].present? ? params[:first_price] : 0

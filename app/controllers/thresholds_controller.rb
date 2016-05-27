@@ -1,4 +1,5 @@
 class ThresholdsController < ApplicationController
+  
   def page1
   end
 

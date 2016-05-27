@@ -32,7 +32,7 @@
         <td><%= link_to store.user, store.user %></td>
         <td><%= link_to 'Show', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) if can? :edit, store %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, store %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, store %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,9 +1,6 @@
 class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:show, :edit, :update, :destroy]
-
-  # GET /wishlists/1
-  # GET /wishlists/1.json
-
+  
   def show
     @user = User.find(params[:user_id])
     @wishlist = Wishlist.find(params[:id])

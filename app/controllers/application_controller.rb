@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
       registration_params = [:name, :avatar, :role, :gender, :birthday, :cover_photo, :latitude, :longitude]
       devise_parameter_sanitizer.permit(:sign_up, keys: registration_params)
     end
+
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_url, :alert => exception.message
+    end
 end

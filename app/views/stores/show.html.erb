@@ -54,10 +54,10 @@
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
 <%= link_to 'Edit', edit_store_path(@store) if can? :edit, @store %>
+<%= link_to 'Destroy', @store, method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, @store  %>
 <%= link_to 'Back', stores_path %>
 
 <%= render partial: "products/product" %>
-
-<h1>New Product</h1>
-
-<%= render partial: 'products/form' %>
+<% if can? :create, @store.products.build %>
+  <%= render partial: 'products/form' %>
+<% end %>

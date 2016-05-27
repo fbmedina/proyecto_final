@@ -4,4 +4,4 @@
 
 <br>
 
-<%= link_to 'New Store', new_store_path %>
+<%= link_to 'New Store', new_store_path if current_user.store.nil? %>

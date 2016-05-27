@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :store
+  load_and_authorize_resource :product, through: :store
 
   # GET /products/1
   # GET /products/1.json
