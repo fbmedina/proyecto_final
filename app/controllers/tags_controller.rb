@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+  load_and_authorize_resource :product
+  load_and_authorize_resource :tag, through: :product
+
   def index
     @tags = ActsAsTaggableOn::Tag.all
   end

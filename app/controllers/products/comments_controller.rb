@@ -1,6 +1,9 @@
 class Products::CommentsController < CommentsController
   before_action :set_commentable
 
+  load_and_authorize_resource :product
+  load_and_authorize_resource :comment, through: :product
+
   private
 
     def set_commentable
