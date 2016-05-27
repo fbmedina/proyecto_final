@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'pages/index'
+
+  get 'thresholds/page1'
+
+  get 'thresholds/page2'
+
+  get 'thresholds/page3'
+
   resources :stores do 
     resources :comments, module: :stores, only: [:create, :destroy]
     resources :likes, module: :stores, only: [:create]
@@ -29,7 +37,7 @@ Rails.application.routes.draw do
 
   post '/add_to_user_wishlist/:user_wishlist_id/:product_id', to: 'user_wishlists#add_to_user_wishlist', as: 'add_to_user_wishlist'
  
-  root to: "stores#index"
+  root to: "pages#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
