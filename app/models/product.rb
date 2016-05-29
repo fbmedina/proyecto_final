@@ -6,11 +6,10 @@ class Product < ActiveRecord::Base
   has_many :user_likes, through: :likes, source: :user
   
   has_many :product_wishlists, dependent: :destroy
+  has_many :user_wishlists, through: :product_wishlists
   has_many :wishlists, through: :product_wishlists
 
   validates :name, presence: true
-
-  #scope :search_by_name, -> (name) { where("lower(name) LIKE ?", "%#{name.downcase}%")}
 
   acts_as_taggable
 

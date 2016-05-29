@@ -1,4 +1,5 @@
 class UserWishlistsController < ApplicationController
+
   def show
     @user = User.find(params[:user_id])
     @user_wishlist = UserWishlist.find(params[:id])
