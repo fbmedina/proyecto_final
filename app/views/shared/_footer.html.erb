@@ -1,0 +1,21 @@
+<footer class="footer-perpetual">
+	<div class="col-3">
+		<%= link_to image_tag("home.svg"), pages_index_path %>
+	</div>
+
+	<div class="col-3">
+		<%= link_to image_tag("search.svg"), search_searches_path %>
+	</div>
+
+	<div class="col-3">
+		<%= link_to image_tag("friends.svg") %>
+	</div>
+
+	<div class="col-3">
+		<% if current_user.store.nil? %>
+			<%= link_to image_tag("store.svg"), new_store_path %>
+		<% else %>
+			<%= link_to image_tag("store.svg"), current_user.store %>
+		<% end %>
+	</div>
+</footer>

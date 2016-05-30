@@ -1,0 +1,16 @@
+<header class="header-perpetual">
+	<div class="col-6 col-offset-3">
+		<%= image_tag "logotype.svg" %>
+	</div>
+	
+	<div class="col-2 col-offset-1 myMenu">
+		<ul class="dropDownMenu">
+			<li><a href="#">x</a>
+				<ul>
+					<li><%= link_to 'Ver perfil', current_user %></li>
+					<li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</header>
