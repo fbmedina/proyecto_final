@@ -1,28 +1,32 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Photo</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th>Store</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<article class="col-10 col-offset-1"> 
+  <h2><%= @user_wishlist.wishlist.name %></h2> 
+  <% @products.each do |product| %>
+    <section class="row">
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.photo %></td>
-        <td><%= product.price %></td>
-        <td><%= product.stock %></td>
-        <td><%= link_to product.store, product.store %></td>
-        <td><%= link_to 'Show', [product.store, product] %></td>
-        <td><%= link_to 'Sacar de wishlist', remove_from_user_wishlist_path(@user_wishlist, product), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-4">
+        <%= image_tag product.photo %>
+      </div>
+
+      <div class="col-8">
+        <h4><%= link_to product.name, [product.store, product]%></h4>
+        <h5><%= product.description %></h5>
+        <h6>
+          <% product.tags.each do |tag| %>
+            #<%= tag %>
+          <% end %>
+        </h6>
+      </div>  
+
+      <div class="col-4">
+        <h3><%= product.price %></h3>
+      </div>
+
+      <div class="col-4">
+        <%= link_to product.store, product.store %>
+      </div>
+      <div class="col-4">
+        <%= link_to 'x', remove_from_user_wishlist_path(@user_wishlist, product), method: :delete %>
+      </div>
+    </section>
+  <% end %>
+</article>

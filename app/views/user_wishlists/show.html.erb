@@ -1,21 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
-<p>
-  <strong>Name:</strong>
-  <%= @user_wishlist.wishlist.name %>
-</p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= image_tag @user_wishlist.wishlist.icon %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @user %>
-</p>
+<%= render partial: "users/profile" %>
 
 <%= render partial: "user_wishlists/product" %>
-
-<%= link_to 'Back', @user %>

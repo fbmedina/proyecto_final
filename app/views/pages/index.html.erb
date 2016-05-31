@@ -1,19 +1,19 @@
-<div class="col-8 col-offset-2 round-border">
-	<%= image_tag("search.svg") %>
+<div class="col-4 col-offset-4 round-border">
+	<%= image_tag "search.svg" %>
 	<%= link_to 'Search', search_searches_path %>
 </div>
 
-<div class="col-8 col-offset-2 round-border">
-	<%= image_tag("friends.svg") %>
+<div class="col-4 col-offset-4 round-border">
+	<%= image_tag "friends.svg" %>
 	<%= link_to 'Friends' %>
 </div>
 <% if current_user.store.nil? %>
-	<div class="col-8 col-offset-2 round-border">
+	<div class="col-4 col-offset-4 round-border">
 		<%= link_to 'New Store', new_store_path %>
 	</div>
 <% else %>
-	<div class="col-8 col-offset-2 round-border">
-		<%= image_tag("store.svg") %>
+	<div class="col-4 col-offset-4 round-border">
+		<%= image_tag "store.svg" %>
 		<%= link_to 'Store', current_user.store %>
 	</div>
 <% end %>

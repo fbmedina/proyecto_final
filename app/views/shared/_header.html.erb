@@ -1,11 +1,14 @@
-<header class="header-perpetual">
-	<div class="col-6 col-offset-3">
+<header class="header-perpetual col-12 no-padding">
+	<div class="col-3">
+		<%= link_to image_tag("back.svg"), :back %>
+	</div>
+	<div class="col-6">
 		<%= image_tag "logotype.svg" %>
 	</div>
 	
-	<div class="col-2 col-offset-1 myMenu">
+	<div class="col-2 col-offset-1 myMenu no-padding circle">
 		<ul class="dropDownMenu">
-			<li><a href="#">x</a>
+			<li><%= link_to image_tag(current_user.avatar), "#" %>
 				<ul>
 					<li><%= link_to 'Ver perfil', current_user %></li>
 					<li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>

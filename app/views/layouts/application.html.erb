@@ -8,14 +8,15 @@
 </head>
 <body>
 
-<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/header' if user_signed_in? %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<main class="col-12 no-padding">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	<%= yield %>
+</main>
 
-<%= yield %>
-
-<%= render partial: 'shared/footer' %>
+<%= render partial: 'shared/footer' if user_signed_in? %>
 
 </body>
 </html>
