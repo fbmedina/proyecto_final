@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.1.3
+//= require jquery.fitvids
+//= require jquery.bxslider.min
+//= require dropdown
+//= require product_carrousel
 //= require turbolinks
-//= require_tree .

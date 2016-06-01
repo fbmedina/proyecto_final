@@ -59,6 +59,21 @@ end
     price: Faker::Number.between(3000, 10000),
     stock: Faker::Number.between(1, 10),
     store: stores.sample,
+    best_seller: false,
+    remote_photo_url: "http://lorempixel.com/200/300/fashion",
+    tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
+  )
+end
+
+5.times do |p2|
+  Product.create(
+    name: Faker::Commerce.product_name,
+    description: Faker::Lorem.sentence(3),
+    price: Faker::Number.between(3000, 10000),
+    stock: Faker::Number.between(1, 10),
+    store: stores.sample,
+    best_seller: true,
+    remote_photo_url: "http://lorempixel.com/200/300/fashion",
     tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
   )
 end
