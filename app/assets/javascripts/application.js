@@ -15,6 +15,7 @@
 //= require jquery.easing.1.3
 //= require jquery.fitvids
 //= require jquery.bxslider.min
+//= require getlocation
 //= require dropdown
 //= require product_carrousel
 //= require turbolinks

@@ -3,7 +3,7 @@ $(document).on("page:change", function() {
 	  minSlides: 3,
 	  maxSlides: 3,
 	  slideWidth: 170,
-	  slideMargin: 10,
+	  slideMargin: 0,
 	  randomStart: true,
 	  moveSlides: 1
 	});
