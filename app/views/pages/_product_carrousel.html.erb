@@ -1,0 +1,10 @@
+<div class="col-12 no-padding">
+	<ul class="bxslider">
+		<% @products.each do |product| %>
+			<li class="col-4 half-padding">
+				<%= link_to image_tag(product.photo), [product.store, product] %>
+				<h4><%= product.name %></h4>
+			</li>
+		<% end %>
+	</ul>
+</div>

@@ -48,7 +48,8 @@ end
     description: Faker::Lorem.sentence(5),
     phone_number: Faker::PhoneNumber.cell_phone,
     user: u,
-    stations: stations.sample(5)
+    stations: stations.sample(5),
+    recommended: [true, false].sample
   )
 end
 

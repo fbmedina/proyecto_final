@@ -1,5 +1,10 @@
 img {
 	max-width: 100%;
+	border-radius: 0.5em;
+}
+
+img.not-bordered {
+	border-radius: 0px;
 }
 
 ul, li {
@@ -29,6 +34,24 @@ main {
 	margin: 7.5em 0 7.5em 0; 
 }
 
+main div {
+	margin: 0.5em 0 0.5em 0;
+}
+
+.linebreak {
+	background: image-url("hr.svg") no-repeat center center transparent;
+	clear: both;
+	height: 2px;
+
+}
+
+img.less-size {
+	width: 75%;
+	margin: 0 auto;
+	display: block;
+	vertical-align: middle;
+}
+
 .float-right {
 	float: right;
 }
@@ -46,4 +69,8 @@ main {
 
 .half-padding {
 	padding: 0.5em;
+}
+
+.round-border {
+	border-radius: 0.5em;
 }

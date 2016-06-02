@@ -1,21 +1,53 @@
 <div class="col-4 col-offset-4 round-border">
-	<%= image_tag "search.svg" %>
-	<%= link_to 'Search', search_searches_path %>
+	<%= image_tag "search.svg", class: "overlaying" %>
+	<%= link_to 'Search', search_searches_path, class: "overlaying" %>
 </div>
 
 <div class="col-4 col-offset-4 round-border">
-	<%= image_tag "friends.svg" %>
-	<%= link_to 'Friends' %>
+	<%= image_tag "friends.svg", class: "overlaying" %>
+	<%= link_to 'Friends', class: "overlaying" %>
 </div>
 <% if current_user.store.nil? %>
 	<div class="col-4 col-offset-4 round-border">
-		<%= link_to 'New Store', new_store_path %>
+		<%= link_to 'New Store', new_store_path, class: "overlaying" %>
 	</div>
 <% else %>
 	<div class="col-4 col-offset-4 round-border">
-		<%= image_tag "store.svg" %>
-		<%= link_to 'Store', current_user.store %>
+		<%= image_tag "store.svg", class: "overlaying" %>
+		<%= link_to 'Store', current_user.store, class: "overlaying" %>
 	</div>
 <% end %>
 
-<%= render partial: "shared/product_carrousel" %>
+<%= render partial: "shared/linebreak" %>
+
+<div class="col-12 promo-pic no-padding">
+	<%= image_tag "best_seller.png", class: "not-bordered" %>
+	<h1 class="overlaying">Lo más deseado</h1>
+</div>
+	
+</div>
+
+<%= render partial: "pages/product_carrousel" %>
+
+<%= render partial: "shared/linebreak" %>
+
+<div class="col-12 promo-pic no-padding">
+	<%= image_tag "recommended.png", class: "not-bordered" %>
+	<h1 class="overlaying">Recomendado para ti</h1>
+</div>
+
+<div class="col-12">
+	<% @stores.sample(3).each do |store| %>
+		<div class="col-12 cover-photo">
+			<%= image_tag store.cover_photo %>
+		</div>
+
+		<div class="col-3 col-offset-1 circle no-padding">
+			<%= image_tag store.photo %>
+		</div>
+
+		<div class="col-8 name">
+		  <%= store.name %>
+		</div>
+	<% end %>
+</div>
