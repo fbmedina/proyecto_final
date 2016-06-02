@@ -1,63 +1,51 @@
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
+<div class="col-12 cover-photo">
+  <%= image_tag @store.cover_photo %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
+<div class="col-3 col-offset-1 circle no-padding">
+  <%= image_tag @store.photo %>
+</div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @store.photo.url %>
-</p>
+<div class="col-7 inline half-padding">
+  <div class="col-8 no-padding"><h2><%= @store.name %></h2></div>
+  <div class="col-4 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
+</div>
 
-<p>
-  <strong>Cover photo:</strong>
-  <%= image_tag @store.cover_photo.url %>
-</p>
+<div class="col-2 col-offset-2">
+  <div class="col-12">
+    <%= image_tag "facebook.svg" %>
+  </div>
+  <div class="col-12">
+  <%= image_tag "instagram.svg" %>
+  </div>
+</div>
 
-<p>
-  <strong>Facebook link:</strong>
-  <%= @store.facebook_link %>
-</p>
+<div class="col-7">
+  <p><%= @store.description %></p>
+  <h3 class="align-right"><%= @store.phone_number %></h3>
+</div>
 
-<p>
-  <strong>Instagram link:</strong>
-  <%= @store.instagram_link %>
+<div class="col-10 col-offset-1">
+    <p>
+      <% @store.stations.each do |station| %>
+        <%= "#{station}" %>
+        <% if (station != @store.stations.last) %>
+        ·
+        <% end %>
+      <% end %>
+    </p>
 </p>
+</div>
 
-<p>
-  <strong>Metros:</strong>
-  <ul>
-    <% @store.stations.each do |station| %>
-      <li><%= station %></li>
-    <% end %>
-  </ul>
-</p>
+<%= render partial: "products/product" %>
+<% if can? :create, @store.products.build %>
+  <%= render partial: 'products/form' %>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= link_to @store.user, @store.user %>
-</p>
-
-<p>
-  <strong>Phone Number:</strong>
-  <%= @store.phone_number %>
-</p>
-
-<strong><%= @store.likes.count %> Likes</strong>
-<%= render partial: "likes/form_store", locals: {likeable: @store} %>
+<%= render partial: "shared/linebreak" %>
 
 <%= render partial: "comments/comments_store", locals: {commentable: @store} %>
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
 <%= link_to 'Edit', edit_store_path(@store) if can? :edit, @store %>
 <%= link_to 'Destroy', @store, method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, @store  %>
-<%= link_to 'Back', stores_path %>
-
-<%= render partial: "products/product" %>
-<% if can? :create, @store.products.build %>
-  <%= render partial: 'products/form' %>
-<% end %>

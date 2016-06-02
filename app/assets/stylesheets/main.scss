@@ -74,3 +74,20 @@ img.less-size {
 .round-border {
 	border-radius: 0.5em;
 }
+
+.inline * {
+	display: inline;
+}
+
+.align-right {
+	text-align: right;
+}
+
+input[type="submit"] {
+	border: 0;
+}
+
+input.heart[type="submit"]
+{
+	background: image-url("heart.svg") no-repeat center center transparent;
+}
