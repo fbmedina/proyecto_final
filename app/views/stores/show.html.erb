@@ -44,7 +44,10 @@
 
 <%= render partial: "shared/linebreak" %>
 
-<%= render partial: "comments/comments_store", locals: {commentable: @store} %>
+<% if @store.comments.count > 0 %>
+  <%= render partial: "comments/comments_store", locals: {commentable: @store} %>
+<% end %>
+
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
 <%= link_to 'Edit', edit_store_path(@store) if can? :edit, @store %>

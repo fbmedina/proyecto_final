@@ -1,4 +1,11 @@
-<%= form_for [commentable, Comment.new] do |f| %>
-	<%= f.text_area :content, placeholder: "Escriba un comentario" %>
-	<%= f.submit %>
-<% end %>
+<div class="col-10 col-offset-1">
+	<div class="col-2 no-padding circle">
+		<%= image_tag current_user.avatar %>
+	</div>
+	<div class="col-10 no-padding align-right">
+	<%= form_for [commentable, Comment.new] do |f| %>
+		<%= f.text_area :content, placeholder: "Escriba un comentario", class: "col-12" %>
+		<%= f.submit "Comenta", class: "button" %>
+	<% end %>
+	</div>
+</div>
