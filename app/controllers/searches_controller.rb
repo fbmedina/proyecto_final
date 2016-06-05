@@ -6,6 +6,8 @@ class SearchesController < ApplicationController
     current_user.latitude = params[:latitude]
     current_user.longitude = params[:longitude]
     current_user.save
+    @user = current_user
+    @user_wishlists = @user.user_wishlists  
 
     @products = Product.all
 

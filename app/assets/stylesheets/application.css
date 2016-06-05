@@ -15,5 +15,6 @@
  *= require grid
  *= require main
  *= require carrousel
+ *= require button_file_field
  *= require_self
  */

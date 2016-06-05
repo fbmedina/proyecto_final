@@ -1,9 +1,11 @@
-<p>
-  <strong>Comments:</strong>
-  <ul>
-  <% commentable.comments.each do |comment| %>
-  	<li><%= comment.content %> - <%= comment.user %></li>
-  	<%= link_to 'X', [@store, commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, comment %>
-  <% end %>
-  </ul>
-</p>
+<div class="col-10 col-offset-1">
+	<% commentable.comments.each do |comment| %>
+		<div class="col-2 no-padding">
+			<%= link_to image_tag(comment.user.avatar), comment.user, class: "circle" %>
+		</div>
+		<div class="col-10">
+			<p><%= comment.content %></p> 
+			<p class="align-right">- <%= link_to comment.user, comment.user %> <%= link_to image_tag("garbage.svg"), [@store, commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+		</div>
+	<% end %>
+</div>

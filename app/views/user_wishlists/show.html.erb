@@ -1,3 +1,10 @@
 <%= render partial: "users/profile" %>
 
-<%= render partial: "user_wishlists/product" %>
+<% if @user_wishlist.products.any? %>
+	<%= render partial: "products/product" %>
+<% else %>
+	<div class="row"></div>
+	<div class="col-6 col-offset-3">
+		<h4><%= "No hay productos en la lista #{@user_wishlist.wishlist.name}" %></h4>
+	</div>
+<% end %>

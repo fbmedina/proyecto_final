@@ -9,6 +9,7 @@ class Store < ActiveRecord::Base
   has_many :stations, through: :station_stores
 
   validates :user_id, uniqueness: true
+  validates :user_id, presence: true
   validates :name, presence: true
 
   mount_uploader :photo, PhotoUploader

@@ -7,16 +7,8 @@
 	<%= image_tag "friends.svg", class: "overlaying" %>
 	<%= link_to 'Friends', class: "overlaying" %>
 </div>
-<% if current_user.store.nil? %>
-	<div class="col-4 col-offset-4 round-border">
-		<%= link_to 'New Store', new_store_path, class: "overlaying" %>
-	</div>
-<% else %>
-	<div class="col-4 col-offset-4 round-border">
-		<%= image_tag "store.svg", class: "overlaying" %>
-		<%= link_to 'Store', current_user.store, class: "overlaying" %>
-	</div>
-<% end %>
+
+<%= render partial: "shared/button_for_own_store" %>
 
 <%= render partial: "shared/linebreak" %>
 

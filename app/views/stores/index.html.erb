@@ -1,7 +1,5 @@
-<h1>Listing Stores</h1>
-
 <%= render partial: "stores/store" %>
 
-<br>
+<%= render partial: "shared/linebreak" %>
 
-<%= link_to 'New Store', new_store_path if current_user.store.nil? %>
+<%= render partial: "shared/button_for_own_store" %>

@@ -3,7 +3,8 @@ class UserWishlistsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @user_wishlist = UserWishlist.find(params[:id])
-    @products = @user_wishlist.products    
+    @products = @user_wishlist.products  
+    @user_wishlists = @user.user_wishlists  
   end
 
   def add_to_user_wishlist

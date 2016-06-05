@@ -27,7 +27,8 @@ Wishlist.create(name: "Have It")
     email: Faker::Internet.email,
     password: "password",
     role: 1,
-    gender: "female"
+    gender: "female",
+    remote_avatar_url: "http://lnx.cabinas.net/wp-content/uploads/2015/06/enviar-bellos-mensajes-por-el-celular-para-mujeres.jpg",
   )
 end
 
@@ -49,7 +50,9 @@ end
     phone_number: Faker::PhoneNumber.cell_phone,
     user: u,
     stations: stations.sample(5),
-    recommended: [true, false].sample
+    recommended: [true, false].sample,
+    remote_photo_url: "http://lorempixel.com/400/400/fashion",
+    remote_cover_photo_url: "http://lorempixel.com/400/125/fashion"
   )
 end
 
@@ -61,7 +64,7 @@ end
     stock: Faker::Number.between(1, 10),
     store: stores.sample,
     best_seller: false,
-    remote_photo_url: "http://lorempixel.com/200/300/fashion",
+    remote_photo_url: "http://lorempixel.com/400/400/fashion",
     tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
   )
 end
@@ -74,7 +77,7 @@ end
     stock: Faker::Number.between(1, 10),
     store: stores.sample,
     best_seller: true,
-    remote_photo_url: "http://lorempixel.com/200/300/fashion",
+    remote_photo_url: "http://lorempixel.com/400/400/fashion",
     tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
   )
 end

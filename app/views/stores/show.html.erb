@@ -1,9 +1,9 @@
-<div class="col-12 cover-photo">
-  <%= image_tag @store.cover_photo %>
+<div class="col-12 no-padding top">
+  <%= image_tag @store.cover_photo, class: "not-bordered" %>
 </div>
 
-<div class="col-3 col-offset-1 circle no-padding">
-  <%= image_tag @store.photo %>
+<div class="col-3 col-offset-1 no-padding">
+  <%= image_tag @store.photo, class: "circle" %>
 </div>
 
 <div class="col-7 inline half-padding">
@@ -11,7 +11,9 @@
   <div class="col-4 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
 </div>
 
-<div class="col-2 col-offset-2">
+<div class="row"></div>
+
+<div class="col-2 col-offset-1">
   <div class="col-12">
     <%= image_tag "facebook.svg" %>
   </div>
@@ -20,21 +22,21 @@
   </div>
 </div>
 
-<div class="col-7">
+<div class="col-7 col-offset-1">
   <p><%= @store.description %></p>
   <h3 class="align-right"><%= @store.phone_number %></h3>
 </div>
 
 <div class="col-10 col-offset-1">
-    <p>
-      <% @store.stations.each do |station| %>
-        <%= "#{station}" %>
-        <% if (station != @store.stations.last) %>
-        ·
-        <% end %>
+  <p class="text-center"><%= image_tag "metro_icon.svg", class: "icon" %></p>
+  <p>
+    <% @store.stations.each do |station| %>
+      <%= "#{station}" %>
+      <% if (station != @store.stations.last) %>
+      ·
       <% end %>
-    </p>
-</p>
+    <% end %>
+  </p>
 </div>
 
 <%= render partial: "products/product" %>
@@ -44,7 +46,7 @@
 
 <%= render partial: "shared/linebreak" %>
 
-<% if @store.comments.count > 0 %>
+<% if @store.comments.any? %>
   <%= render partial: "comments/comments_store", locals: {commentable: @store} %>
 <% end %>
 

@@ -1,47 +1,69 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="col-12 no-padding top">
+  <%= image_tag @product.photo, class: "not-bordered" %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="col-2 col-offset-1">
+	<%= link_to image_tag("store.svg"), @product.store %>
+</div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @product.photo.url %>
-</p>
+<div class="col-2 col-offset-6 no-padding align-right inline">
+	<p><%= render partial: "likes/form", locals: {likeable: @product} %> <%= @product.likes.count %></p>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+<div class="row"></div>
 
-<p>
-  <strong>Stock:</strong>
-  <%= @product.stock %>
-</p>
+<div class="col-3 col-offset-3">
+	<%= link_to image_tag("previous.svg") %>
+</div>
+<div class="col-3">
+	<%= link_to image_tag("next.svg") %>
+</div>
 
-<p>
-  <strong>Store:</strong>
-  <%= @product.store %>
-</p>
+<div class="col-7 col-offset-1">
+	<h3><%= @product.name %></h3>
+</div>
 
-<p>
-<% @product.tags.each do |tag| %>
-  #<%= tag %>
+<div class="col-3 align-right">
+	<h2>$<%= @product.price %></h2>
+</div>
+
+<div class="row"></div>
+
+<div class="col-10 col-offset-1">
+	<p><%= @product.description %></p>
+	<p class="align-right">
+      <% @product.tags.each do |tag| %>
+        #<%= tag %>
+      <% end %>
+    </p>
+
+    <p class="text-center"><%= image_tag "metro_icon.svg", class: "icon" %></p>
+  	<p>
+      <% @product.store.stations.each do |station| %>
+        <%= "#{station}" %>
+        <% if (station != @store.stations.last) %>
+        ·
+        <% end %>
+      <% end %>
+    </p>
+
+</div>
+
+<div class="col-10 col-offset-1">
+	<%= render partial: "user_wishlists/add_to_wishlist" %>
+</div>
+
+<%= render partial: "shared/linebreak" %>
+
+<% if @store.comments.any? %>
+	<%= render partial: "comments/comments", locals: {commentable: @product} %>
 <% end %>
-</p>
 
-
-<strong><%= @product.likes.count %> Likes</strong>
-<%= render partial: "likes/form", locals: {likeable: @product} %>
-
-<%= render partial: "user_wishlists/add_to_wishlist" %>
-
-<%= render partial: "comments/comments", locals: {commentable: @product} %>
 <%= render partial: "comments/form", locals: {commentable: @product} %>
 
-<%= link_to 'Edit', edit_store_product_path(@store, @product) if can? :edit, @product %> |
-<%= link_to 'Back', @store %>
+<% if can? :edit, @product %>
+  <p class="align-right">
+    <%= link_to image_tag("gear.svg"), edit_store_product_path(product.store, product) %>
+    <%= link_to image_tag("garbage.svg"), [product.store, product], method: :delete, data: { confirm: 'Are you sure?' }%>
+  </p>
+<% end %>

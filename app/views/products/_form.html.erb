@@ -12,31 +12,23 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :photo %><br>
-      <%= f.file_field :photo %>
+
+    <div class="col-4 col-offset-1 no-padding upload_product_photo">
+      <label>
+        <%= image_tag "camera.svg" %>
+        Sube una foto
+        <%= f.file_field :photo %>
+      </label>
       <%= f.hidden_field :photo_cache %>
       <%= image_tag(@product.photo) if @product.photo? %>
     </div>
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.number_field :price %>
-    </div>
-    <div class="field">
-      <%= f.label :stock %><br>
-      <%= f.number_field :stock %>
-    </div>
-    <div class="field">
-      <%= f.label :tags %><br>
-      <%= f.text_field :tag_list %>
+
+    <div class="col-6">
+      <h2><%= f.text_field :name, class: "title", placeholder: "Nombre del producto" %></h2>
+      <h3 class="inline align-right">$ <%= f.number_field :price, placeholder: "Precio", class: "price" %></h3>
+      <p><%= f.text_area :description, placeholder: "Descripción" %></p>
+      <p class="align-right"><%= f.text_field :tag_list, placeholder: "Tags" %> <small>(Tags separados por coma)</small></p>
+      <p><%= f.number_field :stock, placeholder: "Cantidad disponible" %></p>
     </div>
     <div class="actions">
       <%= f.submit %>
