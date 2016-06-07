@@ -11,40 +11,75 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :photo_cache %>
-    <%= image_tag(@store.photo) if @store.photo? %>
-  </div>
-  <div class="field">
-    <%= f.label :cover_photo %><br>
-    <%= f.file_field :cover_photo %>
+  <div class="col-12 no-padding top cover-photo-field">
+    <label class="upload_cover_store_photo">
+      <%= image_tag "camera.svg" %>
+      <%= f.file_field :cover_photo %>
+    </label>
     <%= f.hidden_field :cover_photo_cache %>
     <%= image_tag(@store.cover_photo) if @store.cover_photo? %>
   </div>
-  <div class="field">
-    <%= f.label :facebook_link %><br>
-    <%= f.text_field :facebook_link %>
+
+  <div class="col-3 col-offset-1 no-padding photo-field">
+    <label class="upload_store_photo">
+      <%= image_tag "camera.svg" %>
+      <%= f.file_field :photo %>
+    </label>
+    <%= f.hidden_field :photo_cache %>
+    <%= image_tag(@store.photo) if @store.photo? %>
   </div>
-  <div class="field">
-    <%= f.label :instagram_link %><br>
-    <%= f.text_field :instagram_link %>
+
+  <div class="col-7 inline half-padding">
+    <div class="col-9 no-padding">
+      <h2>
+        <%= f.text_field :name, placeholder: "Nombre Tienda" %>
+      </h2>
+    </div>
   </div>
-  <div class="field">
-    <% @lines.each do |line| %>
-      <p>Línea <%= line.name %></p>
-      <%= f.collection_check_boxes :station_ids, line.stations, :id, :name %>
-    <% end %>
+
+  <div class="row"></div>
+
+  <div class="col-2 col-offset-1">
+    <div class="col-12 no-padding">
+      <%= link_to image_tag("facebook.svg"), "#", class: "myButton" %>
+      <div class="dropDownField col-12">
+        <%= f.text_field :facebook_link, class: "col-6 no-padding" %><%= image_tag "check.svg", class: "myButton col-3 col-offset-9 no-padding button" %>
+      </div>
+    </div>
+
+    <div class="col-12 no-padding">
+      <%= link_to image_tag("instagram.svg"), "#", class: "myButton2" %>
+      <div class="dropDownField2 col-12">
+        <%= f.text_field :instagram_link, class: "col-6 no-padding" %><%= image_tag "check.svg", class: "myButton2 col-3 col-offset-9 no-padding button" %>
+      </div>
+    </div>
   </div>
+
+  <div class="col-7 col-offset-1">
+    <p>
+      <%= f.text_area :description, placeholder: "Descripción de tu tienda" %>
+    </p>
+    <div class="col-3 col-offset-2 no-padding">
+      <%= image_tag "whatsapp.svg" %>
+    </div>
+    <div class= "col-7 no-padding">
+      <h3 class="align-right">
+        <%= f.text_field :phone_number, placeholder: "Celular" %>
+      </h3>
+    </div>
+  </div>
+
+  <div class="row"></div>
+
+  <div class="col-10 col-offset-1">
+      <% @lines.each do |line| %>
+        <h3 class="accordion">Línea <%= line.name %></h3 class="accordion">
+        <div class="panel">
+          <%= f.collection_check_boxes :station_ids, line.stations, :id, :name %>
+        </div>
+      <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

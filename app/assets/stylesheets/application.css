@@ -12,9 +12,11 @@
  *
  *= require normalize
  *= require jquery.bxslider
+ *= require body
  *= require grid
  *= require main
  *= require carrousel
  *= require button_file_field
+ *= require overlaying
  *= require_self
  */

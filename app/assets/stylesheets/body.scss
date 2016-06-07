@@ -1,0 +1,64 @@
+$principal-font-color: rgba(100, 50, 0, 1);
+
+html, body{
+	width: 100%;
+	height:100%;
+	max-width: 375px;
+	max-height: 667px;
+	box-sizing: border-box;
+	font-size: 12px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin: 0 auto;
+	color: $principal-font-color;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+img {
+	width: 100%;
+	border-radius: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	font-weight: 400;
+	color: $principal-font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 1.6em;
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.0em;
+}
+
+
+h5 {
+	font-size: 0.8em;
+}
+
+h6 {
+	font-size: 0.6em;
+}
+
+ul, li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}

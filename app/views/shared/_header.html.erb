@@ -1,14 +1,14 @@
-<header class="header-perpetual col-12 no-padding">
-	<div class="col-3">
-		<%= link_to image_tag("back.svg"), :back %>
+<header class="header-perpetual col-12 half-padding">
+	<div class="col-1 no-padding">
+		<%= link_to image_tag("back.svg"), :back, class: "less-size" %>
 	</div>
-	<div class="col-6">
-		<%= image_tag "logotype.svg" %>
+	<div class="col-4 col-offset-3 no-padding">
+		<%= link_to image_tag("logotype.svg"), pages_index_path %>
 	</div>
 	
-	<div class="col-2 col-offset-1 myMenu no-padding">
+	<div class="col-2 col-offset-2 myMenu no-padding">
 		<ul class="dropDownMenu">
-			<li><%= link_to image_tag(current_user.avatar), "#", class: "circle" %>
+			<li><%= link_to image_tag(current_user.avatar), "#", class: "circle less-size" %>
 				<ul class="specific-width">
 					<li><%= link_to 'Ver perfil', current_user %></li>
 					<li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>

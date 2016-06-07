@@ -7,28 +7,33 @@
 </div>
 
 <div class="col-7 inline half-padding">
-  <div class="col-8 no-padding"><h2><%= @store.name %></h2></div>
-  <div class="col-4 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
+  <div class="col-9 no-padding"><h2><%= @store.name %></h2></div>
+  <div class="col-3 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
 </div>
 
 <div class="row"></div>
 
 <div class="col-2 col-offset-1">
-  <div class="col-12">
+  <div class="col-12 no-padding">
     <%= image_tag "facebook.svg" %>
   </div>
-  <div class="col-12">
+  <div class="col-12 no-padding">
   <%= image_tag "instagram.svg" %>
   </div>
 </div>
 
 <div class="col-7 col-offset-1">
   <p><%= @store.description %></p>
-  <h3 class="align-right"><%= @store.phone_number %></h3>
+  <div class="col-3 col-offset-2 no-padding">
+    <%= image_tag "whatsapp.svg" %>
+  </div>
+  <div class= "col-7 no-padding">
+    <h3 class="align-right"><%= @store.phone_number %></h3>
+  </div>
 </div>
 
 <div class="col-10 col-offset-1">
-  <p class="text-center"><%= image_tag "metro_icon.svg", class: "icon" %></p>
+  <p class="text-center"><%= image_tag "metro.svg", class: "icon" %></p>
   <p>
     <% @store.stations.each do |station| %>
       <%= "#{station}" %>
@@ -52,5 +57,13 @@
 
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
-<%= link_to 'Edit', edit_store_path(@store) if can? :edit, @store %>
-<%= link_to 'Destroy', @store, method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, @store  %>
+<% if can? :edit, @store  %>
+  <div class="col-4 col-offset-7">
+    <div class="col-6 no-padding">
+      <%= link_to image_tag("gear.svg"), edit_store_path(@store) %>
+    </div>
+    <div class="col-6 no-padding">
+      <%= link_to image_tag("garbage.svg"), @store, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,9 @@ class Store < ActiveRecord::Base
 
   validates :user_id, uniqueness: true
   validates :user_id, presence: true
-  validates :name, presence: true
+  validates :name, :phone_number, :station_ids, presence: true
+
+  attr_writer :current_step
 
   mount_uploader :photo, PhotoUploader
   mount_uploader :cover_photo, CoverPhotoUploader

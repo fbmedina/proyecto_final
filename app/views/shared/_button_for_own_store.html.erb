@@ -1,10 +1,13 @@
 <% if current_user.store.nil? %>
-	<div class="col-4 col-offset-4 round-border">
-		<%= link_to 'New Store', new_store_path, class: "overlaying" %>
+	<div class="col-4 col-offset-4 round-border text-center no-padding">
+		<%= link_to "Crea una Tienda", new_store_path, class: "button" %>
 	</div>
 <% else %>
-	<div class="col-4 col-offset-4 round-border">
-		<%= image_tag "store.svg", class: "overlaying" %>
-		<%= link_to 'Store', current_user.store, class: "overlaying" %>
+	<div class="col-4 col-offset-4 round-border text-center no-padding">
+		<%= image_tag "promo_store.png", class: "under" %>
+		<div class="overlaying principal-buttons">
+			<%= link_to image_tag("store.svg"), current_user.store %>
+			<%= link_to "Administra tu Tienda", current_user.store %>
+		</div>
 	</div>
 <% end %>

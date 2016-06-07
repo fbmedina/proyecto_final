@@ -1,8 +1,8 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
-  load_and_authorize_resource :store
   
+  load_and_authorize_resource :store
+
   # GET /stores
   # GET /stores.json
   def index
@@ -34,9 +34,10 @@ class StoresController < ApplicationController
   def create
     @store = Store.new(store_params)
     @store.user = current_user
-    byebug
+    @lines = Line.all
+
     respond_to do |format|
-      if @store.save!
+      if @store.save
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
         format.json { render :show, status: :created, location: @store }
       else
@@ -49,6 +50,7 @@ class StoresController < ApplicationController
   # PATCH/PUT /stores/1
   # PATCH/PUT /stores/1.json
   def update
+    @lines = Line.all
     respond_to do |format|
       if @store.update(store_params)
         format.html { redirect_to @store, notice: 'Store was successfully updated.' }
@@ -78,6 +80,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:name, :description, :photo, :photo_cache, :cover_photo, :cover_photo_cache, :facebook_link, :instagram_link, :products, station_ids: [])
+      params.require(:store).permit(:name, :description, :photo, :photo_cache, :cover_photo, :cover_photo_cache, :facebook_link, :instagram_link, :phone_number, :products, station_ids: [])
     end
 end

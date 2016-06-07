@@ -1,4 +1,5 @@
-<h1>New Product</h1>
+  <%= render partial: "shared/linebreak" %>
+
   <%= form_for [@store, @product], html: {multipart: true} do |f| %>
     <% if @product.errors.any? %>
       <div id="error_explanation">
@@ -12,25 +13,28 @@
       </div>
     <% end %>
 
+    <div class="col-6 col-offset-3 no-padding text-center">
+      <h3>Agregue productos</h3>
+    </div>
 
-    <div class="col-4 col-offset-1 no-padding upload_product_photo">
-      <label>
+
+    <div class="col-4 col-offset-1 no-padding row">
+      <label class="upload_product_photo">
         <%= image_tag "camera.svg" %>
-        Sube una foto
         <%= f.file_field :photo %>
       </label>
       <%= f.hidden_field :photo_cache %>
       <%= image_tag(@product.photo) if @product.photo? %>
     </div>
 
-    <div class="col-6">
-      <h2><%= f.text_field :name, class: "title", placeholder: "Nombre del producto" %></h2>
+    <div class="col-6 no-top-padding">
+      <h2><%= f.text_field :name, class: "title", placeholder: "Nombre" %></h2>
       <h3 class="inline align-right">$ <%= f.number_field :price, placeholder: "Precio", class: "price" %></h3>
       <p><%= f.text_area :description, placeholder: "Descripción" %></p>
-      <p class="align-right"><%= f.text_field :tag_list, placeholder: "Tags" %> <small>(Tags separados por coma)</small></p>
+      <p class="align-right"><%= f.text_field :tag_list, placeholder: "Tags separados por ','" %></p>
       <p><%= f.number_field :stock, placeholder: "Cantidad disponible" %></p>
     </div>
-    <div class="actions">
+    <div class="col-6 col-offset-3 no-padding text-center">
       <%= f.submit %>
     </div>
   <% end %>

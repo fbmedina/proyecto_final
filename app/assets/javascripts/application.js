@@ -17,5 +17,7 @@
 //= require jquery.bxslider.min
 //= require getlocation
 //= require dropdown
+//= require slide_link_field
 //= require product_carrousel
+//= require accordion_station_field
 //= require turbolinks

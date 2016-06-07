@@ -1,15 +1,16 @@
 <div class="col-12">
   <% @stores.each do |store| %>
-    <div class="col-12 no-padding">
+    <div class="col-12 no-padding top">
       <%= image_tag store.cover_photo, class: "not-bordered" %>
     </div>
 
     <div class="col-3 col-offset-1 no-padding">
-      <%= image_tag store.photo, class: "circle" %>
+      <%= link_to image_tag(store.photo), store, class: "circle" %>
     </div>
 
-    <div class="col-8 name">
-      <%= link_to store.name, store %>
+    <div class="col-7 inline half-padding">
+      <div class="col-9 no-padding"><h2><%= link_to store.name, store %></h2></div>
+      <div class="col-3 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: store} %> <%= store.likes.count %></p></div>
     </div>
   <% end %>
 </div>

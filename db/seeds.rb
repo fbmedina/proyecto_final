@@ -17,9 +17,20 @@ users = []
 stores = []
 stations = []
 
-Wishlist.create(name: "Love It")
-Wishlist.create(name: "Hate It")
-Wishlist.create(name: "Have It")
+Wishlist.create(
+  name: "Lo Amo",
+  icon: "love_it.svg"
+  )
+
+Wishlist.create(
+  name: "Lo Odio",
+  icon: "hate_it.svg"
+  )
+
+Wishlist.create(
+  name: "Lo Tengo",
+  icon: "have_it.svg"
+  )
 
 5.times do |u|
   users << User.create!(
@@ -44,7 +55,7 @@ end
 
 5.times do |s|
   u = users[s]
-  stores << Store.create!(
+  stores << Store.create(
     name: Faker::Company.name,
     description: Faker::Lorem.sentence(5),
     phone_number: Faker::PhoneNumber.cell_phone,

@@ -7,7 +7,38 @@ input[type="file"]{
 	z-index: -1;
 }
 
-label {
+.cover-photo-field {
+	height: 128.944px;
+}
+
+.photo-field {
+	height: 95px;
+	border-radius: 100%;
+}
+
+label.upload_product_photo,
+label.upload_store_photo,
+label.upload_cover_store_photo {
 	cursor: pointer;
     display: inline-block;
+}
+
+label.upload_product_photo, 
+label.upload_store_photo {
+    width: 50%;
+    margin: 30% 25%;
+    padding: 0;
+}
+
+
+label.upload_cover_store_photo {
+    width: 10%;
+    padding: 0;
+    margin: 25% 87.5%;
+}
+
+label.upload_product_photo img,
+label.upload_store_photo img,
+label.upload_cover_store_photo img {
+	border-radius: 0;
 }

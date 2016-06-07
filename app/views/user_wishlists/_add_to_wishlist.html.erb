@@ -1,9 +1,9 @@
 <% @user_wishlists.each do |user_wishlist| %>
 	<div class="col-4">
 	<% if user_wishlist.products.include? @product %>
-		<%= link_to image_tag(user_wishlist.wishlist.icon), remove_from_user_wishlist_path(user_wishlist, @product), method: :delete, class: "selected_icon" %>
+		<%= link_to image_tag(user_wishlist.wishlist.icon), remove_from_user_wishlist_path(user_wishlist, @product), method: :delete, class: "selected" %>
 	<% else %>
-		<%= link_to image_tag(user_wishlist.wishlist.icon), add_to_user_wishlist_path(user_wishlist, @product), method: :post, class: "unselected_icon" %>
+		<%= link_to image_tag(user_wishlist.wishlist.icon), add_to_user_wishlist_path(user_wishlist, @product), method: :post, class: "unselected" %>
 	<% end %>
 	</div>
 <% end %>

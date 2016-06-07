@@ -1,11 +1,27 @@
-<div class="col-4 col-offset-4 round-border">
-	<%= image_tag "search.svg", class: "overlaying" %>
-	<%= link_to 'Search', search_searches_path, class: "overlaying" %>
+<div class="col-10 no-padding col-offset-1">	
+	<div class="col-3 aside-hr-left">
+	</div>
+	<div class="col-6 no-padding">
+		<h1 class="text-center">¿Qué deseas hoy?</h1>
+	</div>
+	<div class="col-3 aside-hr-right">
+	</div>
 </div>
 
-<div class="col-4 col-offset-4 round-border">
-	<%= image_tag "friends.svg", class: "overlaying" %>
-	<%= link_to 'Friends', class: "overlaying" %>
+<div class="col-4 col-offset-4 round-border text-center no-padding">
+	<%= image_tag "promo_search.png", class: "under" %>
+	<div class="overlaying principal-buttons">
+		<%= link_to image_tag("search.svg"), search_searches_path %>
+		<%= link_to "Agranda tus Deseos", search_searches_path %>
+	</div>
+</div>
+
+<div class="col-4 col-offset-4 round-border text-center no-padding">
+	<%= image_tag "promo_friends.png", class: "under" %>
+	<div class="overlaying principal-buttons">
+		<%= link_to image_tag("friends.svg"), "#" %>
+		<%= link_to "Deseos de Amigos", "#" %>
+	</div>
 </div>
 
 <%= render partial: "shared/button_for_own_store" %>
@@ -13,8 +29,16 @@
 <%= render partial: "shared/linebreak" %>
 
 <div class="col-12 promo-pic no-padding">
-	<%= image_tag "best_seller.png", class: "not-bordered" %>
-	<h1 class="overlaying">Lo más deseado</h1>
+	<%= image_tag "best_seller.png", class: "not-bordered under" %>
+	<div class="col-10 no-padding col-offset-1">	
+		<div class="col-3 aside-hr-left">
+		</div>
+		<div class="col-6 no-padding">
+			<h1 class="text-center">Lo más deseado</h1>
+		</div>
+		<div class="col-3 aside-hr-right">
+		</div>
+	</div>
 </div>
 	
 </div>
@@ -25,7 +49,15 @@
 
 <div class="col-12 promo-pic no-padding">
 	<%= image_tag "recommended.png", class: "not-bordered" %>
-	<h1 class="overlaying">Recomendado para ti</h1>
+	<div class="col-10 no-padding col-offset-1">	
+		<div class="col-3 aside-hr-left">
+		</div>
+		<div class="col-6 no-padding">
+			<h1 class="text-center">Recomendado</h1>
+		</div>
+		<div class="col-3 aside-hr-right">
+		</div>
+	</div>
 </div>
 
 <%= render partial: "pages/recommended_stores" %>

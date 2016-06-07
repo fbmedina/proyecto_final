@@ -1,8 +1,3 @@
-img {
-	width: 100%;
-	border-radius: 0.5em;
-}
-
 img.not-bordered {
 	border-radius: 0px;
 }
@@ -12,10 +7,8 @@ img.icon {
 	width: 10%;
 }
 
-ul, li {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+a.circle img {
+	border-radius: 100%;
 }
 
 header.header-perpetual {
@@ -40,7 +33,8 @@ footer.footer-perpetual {
 }
 
 main {
-	margin: 4.5em 0 5em 0;
+	margin: 5.5em 0 7.5em 0;
+	bottom: 10em;
 }
 
 main div {
@@ -51,10 +45,20 @@ main div {
 	background: image-url("hr.svg") no-repeat center center transparent;
 	clear: both;
 	height: 2px;
-
 }
 
-img.less-size {
+.aside-hr-left {
+	background: image-url("aside_hr_left.svg") no-repeat center center transparent;
+	margin-top: 1.5em;
+}
+
+.aside-hr-right {
+	background: image-url("aside_hr_right.svg") no-repeat center center transparent;
+	margin-top: 1.5em;
+}
+
+
+img.less-size, a.less-size img {
 	width: 75%;
 	margin: 0 auto;
 	display: block;
@@ -68,12 +72,28 @@ img.less-size {
 	width: 16.666666666666668%;
 }
 
+.dropDownField,
+.dropDownField2 {
+	display: none;
+	position: absolute;
+	background: red;
+	width: 16.666666666666668%;
+}
+
 .no-padding {
 	padding: 0;
 }
 
+.no-top-padding {
+	padding-top: 0;
+}
+
 .half-padding {
 	padding: 0.5em;
+}
+
+.double-padding-sides {
+	padding: 0 1.75em;
 }
 
 .top {
@@ -96,16 +116,41 @@ img.less-size {
 	text-align: center;
 }
 
-.upload_product_photo {
-	height: 124px;
+.accordion {
+	cursor: pointer;
+	  -webkit-transition: 3s ease-in-out;
+	  -moz-transition: 3s ease-in-out;
+	  -o-transition: 3s ease-in-out;
+	  transition: 3s ease-in-out;	
+}
+
+div.panel {
+	display: none;
+	max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+	  -webkit-transition: 3s ease-in-out;
+	  -moz-transition: 3s ease-in-out;
+	  -o-transition: 3s ease-in-out;
+	  transition: 3s ease-in-out;
+}
+
+div.panel.show {
+    display: block !important;
+    opacity: 1;
+    max-height: 500px;
+	  -webkit-transition: 3s ease-in-out;
+	  -moz-transition: 3s ease-in-out;
+	  -o-transition: 3s ease-in-out;
+	  transition: 3s ease-in-out;
 }
 
 input[type="submit"] {
 	border: 0;
 }
 
-input.heart[type="submit"] {
-	background: image-url("heart.svg") no-repeat center center transparent;
+input.star[type="submit"] {
+	background: image-url("star.svg") no-repeat center center transparent;
 }
 
 input[type="text"],

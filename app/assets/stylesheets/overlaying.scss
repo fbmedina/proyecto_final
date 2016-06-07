@@ -1,0 +1,15 @@
+.under {
+	position: relative;
+	z-index: -1;
+}
+
+.overlaying {
+	position: absolute;
+	z-index: 1;
+}
+
+.principal-buttons {
+	width: 75px;
+	margin: -115px 22.5px;
+}
+

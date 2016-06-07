@@ -4,11 +4,19 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
-    @comment.save
-    if @commentable.is_a?(Product) 
-      redirect_to [@store, @commentable], notice: "Comentario enviado"
+    
+    if @comment.save
+      if @commentable.is_a?(Product) 
+        redirect_to [@store, @commentable], notice: "Comentario enviado"
+      else
+        redirect_to @commentable, notice: "Comentario enviado"
+      end
     else
-      redirect_to @commentable, notice: "Comentario enviado"
+      if @commentable.is_a?(Product) 
+        redirect_to [@store, @commentable], notice: "Comentario no enviado"
+      else
+        redirect_to @commentable, notice: "Comentario no enviado"
+      end
     end
   end
 
