@@ -1,19 +1,39 @@
-$(document).on("page:change", function() {
-	/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
-	/*var acc = document.getElementsByClassName("accordion");
-	var i;
+$(document).on("page:load ready", function() {
+	$('.stores.new').ready(function () {
+		var speed = '400';
 
-	for (i = 0; i < acc.length; i++) {
-	    acc[i].onclick = function(){
-	        this.classList.toggle("active");
-	        this.nextElementSibling.classList.toggle("show");
-	    };
-	}*/
+		$('.accordion').click(function(event) {
+			if (!$(this).hasClass('active')) {
+				$('.show').slideUp(speed, function(){
+					$(this).removeClass('show');
+				});
+				$(this).toggleClass('active').next().slideDown(speed, function() {
+					$(this).toggleClass('show');
+				});
+			} else {
+				$(this).toggleClass('active').next().slideUp(speed, function(){
+					$(this).removeClass('show');
+				});
+			}
+		});
+	});
 
-	$('.accordion').click(function(event) {
-		console.log('test');
-		$(this).toggleClass('active');
-		$('.panel').removeClass('show');
-		$(this).next().toggleClass('show');
+	$('.stores.edit').ready(function () {
+		var speed = '400';
+
+		$('.accordion').click(function(event) {
+			if (!$(this).hasClass('active')) {
+				$('.show').slideUp(speed, function(){
+					$(this).removeClass('show');
+				});
+				$(this).toggleClass('active').next().slideDown(speed, function() {
+					$(this).toggleClass('show');
+				});
+			} else {
+				$(this).toggleClass('active').next().slideUp(speed, function(){
+					$(this).removeClass('show');
+				});
+			}
+		});
 	});
 });

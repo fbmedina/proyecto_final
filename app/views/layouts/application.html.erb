@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
 <%= render partial: 'shared/header' if user_signed_in? %>
 

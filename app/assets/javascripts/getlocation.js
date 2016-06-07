@@ -15,6 +15,12 @@ function showPosition(position) {
 }
 
 
-$(document).on('page:change', function(){
-	getLocation();
+$(document).on("page:load ready", function() {
+	$('.searches.show').ready(function () {
+		getLocation();
+	});
+
+	$('.searches.index').ready(function () {
+		getLocation();
+	});
 });

@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
+//= require jquery-readyselector
 //= require jquery.easing.1.3
 //= require jquery.fitvids
 //= require jquery.bxslider.min
@@ -20,4 +22,11 @@
 //= require slide_link_field
 //= require product_carrousel
 //= require accordion_station_field
-//= require turbolinks
+//= require jquery.easing.1.3
+//= require jquery.fitvids
+//= require jquery.bxslider.min
+//= require getlocation
+//= require dropdown
+//= require slide_link_field
+//= require product_carrousel
+//= require accordion_station_field

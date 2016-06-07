@@ -17,6 +17,7 @@
  *= require main
  *= require carrousel
  *= require button_file_field
+ *= require drop_down
  *= require overlaying
  *= require_self
  */

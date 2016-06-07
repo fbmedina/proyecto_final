@@ -25,9 +25,6 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   def self.find_for_facebook_oauth(auth)
-    access_token = auth.credentials.token
-    facebook = Koala::Facebook::API.new(access_token)
-
     user = User.where(provider: auth.provider, uid: auth.uid).first
     
     return user if user
