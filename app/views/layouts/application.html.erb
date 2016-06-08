@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProyectoFinal</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+	<title>ProyectoFinal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 
-<%= render partial: 'shared/header' if user_signed_in? %>
+	<%= render partial: 'shared/header' if user_signed_in? %>
 
-<main class="col-12 no-padding">
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	<%= yield %>
-</main>
+	<main class="col-12 no-padding">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<%= yield %>
+	</main>
 
-<%= render partial: 'shared/footer' if user_signed_in? %>
+	<%= render partial: 'shared/footer' if user_signed_in? %>
 
 </body>
 </html>

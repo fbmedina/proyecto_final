@@ -1,50 +1,59 @@
 <div class="col-12 no-padding top">
-  <%= image_tag @store.cover_photo, class: "not-bordered" %>
-</div>
+  <%= image_tag @store.cover_photo, class: "not-bordered under" %>
 
-<div class="col-3 col-offset-1 no-padding">
-  <%= image_tag @store.photo, class: "circle" %>
-</div>
+  <div class="store-overlaying">
+    <div class="col-3 col-offset-1 no-padding">
+      <%= image_tag @store.photo, class: "circle" %>
+    </div>
 
-<div class="col-7 inline half-padding">
-  <div class="col-9 no-padding"><h2><%= @store.name %></h2></div>
-  <div class="col-3 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
-</div>
-
-<div class="row"></div>
-
-<div class="col-2 col-offset-1">
-  <div class="col-12 no-padding">
-    <%= image_tag "facebook.svg" %>
-  </div>
-  <div class="col-12 no-padding">
-  <%= image_tag "instagram.svg" %>
+    <div class="col-7 inline half-padding">
+      <div class="col-9 no-padding"><h2><%= @store.name %></h2></div>
+      <div class="col-3 no-padding align-right"><p><%= render partial: "likes/form_store", locals: {likeable: @store} %> <%= @store.likes.count %></p></div>
+    </div>
   </div>
 </div>
 
-<div class="col-7 col-offset-1">
-  <p><%= @store.description %></p>
-  <div class="col-3 col-offset-2 no-padding">
-    <%= image_tag "whatsapp.svg" %>
+<div class="col-12 no-padding top">
+  <div class="col-2 col-offset-1">
+    <div class="col-12 no-padding">
+      <%= image_tag "facebook.svg" %>
+    </div>
+    <div class="col-12 no-padding">
+    <%= image_tag "instagram.svg" %>
+    </div>
   </div>
-  <div class= "col-7 no-padding">
-    <h3 class="align-right"><%= @store.phone_number %></h3>
-  </div>
-</div>
 
-<div class="col-10 col-offset-1">
-  <p class="text-center"><%= image_tag "metro.svg", class: "icon" %></p>
-  <p>
-    <% @store.stations.each do |station| %>
-      <%= "#{station}" %>
-      <% if (station != @store.stations.last) %>
-      ·
+  <div class="col-7 col-offset-1">
+    <p><%= @store.description %></p>
+    <div class="col-3 col-offset-2 no-padding">
+      <%= image_tag "whatsapp.svg" %>
+    </div>
+    <div class= "col-7 no-padding">
+      <h3 class="align-right"><%= @store.phone_number %></h3>
+    </div>
+  </div>
+
+  <div class="col-10 col-offset-1">
+    <p class="text-center"><%= image_tag "metro.svg", class: "icon" %></p>
+    <p>
+      <% @store.stations.each do |station| %>
+        <%= "#{station}" %>
+        <% if (station != @store.stations.last) %>
+        ·
+        <% end %>
       <% end %>
-    <% end %>
-  </p>
+    </p>
+  </div>
 </div>
+<%= render partial: "shared/linebreak" %>
 
-<%= render partial: "products/product" %>
+<% if @store.products.any? %>
+  <%= render partial: "products/product" %>
+<% else %>
+  <div class="row"></div>
+  <div class="col-10 col-offset-1 text-center"><h4>No hay productos en la Tienda</h4></div>
+<% end %>
+
 <% if can? :create, @store.products.build %>
   <%= render partial: 'products/form' %>
 <% end %>

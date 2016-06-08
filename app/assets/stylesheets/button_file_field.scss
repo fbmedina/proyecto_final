@@ -7,10 +7,6 @@ input[type="file"]{
 	z-index: -1;
 }
 
-.cover-photo-field {
-	height: 128.944px;
-}
-
 .photo-field {
 	height: 95px;
 	border-radius: 100%;
@@ -32,9 +28,8 @@ label.upload_store_photo {
 
 
 label.upload_cover_store_photo {
-    width: 10%;
     padding: 0;
-    margin: 25% 87.5%;
+    width: 100%;
 }
 
 label.upload_product_photo img,
