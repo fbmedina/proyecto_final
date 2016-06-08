@@ -98,6 +98,10 @@ img.less-size, a.less-size img {
 	display: inline;
 }
 
+.block > label{
+	display: block;
+}
+
 .align-right {
 	text-align: right;
 }

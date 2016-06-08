@@ -79,10 +79,13 @@
   <div class="row"></div>
 
   <div class="col-10 col-offset-1">
+    <h3 class="text-center top">¿Dónde entregas?</h3>
       <% @lines.each do |line| %>
-        <h3 class="accordion">Línea <%= line.name %></h3 class="accordion">
-        <div class="panel">
-          <%= f.collection_check_boxes :station_ids, line.stations, :id, :name %>
+        <h3 class="accordion"><%= image_tag "metro.svg", class: "icon" %>Línea <%= line.name %></h3>
+        <div class="panel block">
+          <%= f.collection_check_boxes :station_ids, line.stations, :id, :name do |b| %>
+            <%= b.label { b.check_box + b.text } %>
+          <% end %>
         </div>
       <% end %>
   </div>
