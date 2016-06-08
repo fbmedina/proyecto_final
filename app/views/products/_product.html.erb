@@ -2,8 +2,10 @@
 <% @products.each do |product| %>
 
   <div class="col-4 col-offset-1 no-padding">
-    <%= link_to image_tag(product.photo), [product.store, product] %>
-    <%= link_to image_tag("store.svg"), product.store %>
+    <%= link_to image_tag(product.photo), [product.store, product], class: "under" %>
+    <div class="col-3 no-padding icon-store-overlaying">
+      <%= link_to image_tag("store.svg"), product.store, class: "not-bordered" %>
+    </div>
   </div>
 
   <div class="col-6 no-top-padding">
