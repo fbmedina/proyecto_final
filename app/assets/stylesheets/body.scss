@@ -1,4 +1,4 @@
-$principal-font-color: rgba(100, 50, 0, 1);
+@import "variables";
 
 html, body{
 	width: 100%;
@@ -8,13 +8,13 @@ html, body{
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	margin: 0 auto;
-	color: $principal-font-color;
+	color: $principalBrown;
 	background: repeating-linear-gradient(
 		45deg,
 		rgba(200, 155, 110, 0.3),
 		rgba(200, 155, 110, 0.3) 1.5px,
-		rgba(255, 255, 255, 1) 1.5px,
-		rgba(255, 255, 255, 1) 5px
+		rgba(255, 255, 250, 1) 1.5px,
+		rgba(255, 255, 250, 1) 5px
 	);
 	background-attachment: fixed;
 
@@ -27,12 +27,13 @@ html, body{
 img {
 	width: 100%;
 	border-radius: 0.5em;
+	vertical-align: top;
 }
 
 a {
 	text-decoration: none;
 	font-weight: 400;
-	color: $principal-font-color;
+	color: $principalBrown;
 }
 
 h1, h2, h3, h4, h5, h6 {
