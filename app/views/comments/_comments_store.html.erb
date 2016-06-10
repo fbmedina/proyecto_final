@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-10">
 			<p><%= comment.content %></p> 
-			<p class="align-right">- <%= link_to comment.user, comment.user %> <%= link_to image_tag("garbage.svg"), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+			<p class="align-right">- <%= link_to comment.user, comment.user %> <%= link_to image_tag("garbage.svg"), [commentable, comment], class: "icon", method: :delete, data: { confirm: 'Are you sure?' } %> </p>
 		</div>
 	<% end %>
 </div>

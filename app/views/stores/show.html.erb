@@ -70,12 +70,8 @@
 <%= render partial: "comments/form_store", locals: {commentable: @store} %>
 
 <% if can? :edit, @store  %>
-  <div class="col-4 col-offset-7">
-    <div class="col-6 no-padding">
-      <%= link_to image_tag("gear.svg"), edit_store_path(@store) %>
-    </div>
-    <div class="col-6 no-padding">
-      <%= link_to image_tag("garbage.svg"), @store, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+  <div class="col-4 col-offset-7 align-right">
+      <%= link_to image_tag("gear.svg"), edit_store_path(@store), class: "icon" %>
+      <%= link_to image_tag("garbage.svg"), @store, class: "icon", method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>

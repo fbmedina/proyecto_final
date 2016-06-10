@@ -13,6 +13,11 @@ img.icon {
 	width: 1.25em;
 }
 
+a.icon img {
+	border-radius: 0px;
+	width: 1.25em;
+}
+
 a.circle img {
 	border-radius: 100%;
 }
@@ -156,6 +161,11 @@ img.less-size, a.less-size img {
 .top {
 	top: 0;
 	margin-top: -1em;
+}
+
+.super-top {
+	top: 0;
+	margin-top: -1.75em;
 }
 
 .bottom {
