@@ -113,6 +113,10 @@ img.less-size, a.less-size img {
 	padding-top: 0;
 }
 
+.no-bottom-padding {
+	padding-bottom: 0;
+}
+
 .half-padding {
 	padding: 0.5em;
 }
@@ -159,35 +163,24 @@ div.panel {
 	display: none;
 }
 
-input[type="submit"] {
-	border: 0;
-}
-
-input.star[type="submit"] {
-	background: image-url("star.svg") no-repeat center center transparent;
-	width: 2em;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="file"] {
-	width: 100%;
-}
-
-textarea {
-	width: 100%;
-}
-
-input.price[type="number"] {
-	width: 90%;
-}
-
 .relative {
 	position: relative;
 }
 
 .no-margin {
 	margin-top: 0;
+}
+
+.search * {
+	margin-top: 1em;
+}
+
+.search *:first-child {
+	margin-top: 0;
+}
+
+.no-margin-items * {
+	margin: 0;
 }
 
 .metro-line::before {

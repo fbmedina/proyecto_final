@@ -9,20 +9,26 @@
 </div>
 
 <%= form_tag search_searches_path do %>
-	<div class="col-10 col-offset-1 other-background">
-		<%= label_tag :key_word, 'Filtrar' %>
-		<%= text_field_tag :key_word %>
+	<div class="col-10 col-offset-1 other-background search">
+		<%= text_field_tag :key_word, nil, placeholder: "Palabra clave" %>
 
-		<%= label_tag :first_price, 'Price between' %>
-		<%= number_field_tag :first_price, 0 %>
-		<%= label_tag :second_price, 'and' %>
-		<%= number_field_tag :second_price %>
+		<div class="col-5 no-padding no-margin-items">
+			<%= label_tag :first_price, 'Precio mínimo' %>
+			<p class="align-right">$ <%= number_field_tag :first_price, 0, class: "price" %></p>
+		</div>
+		<div class="col-5 col-offset-2 no-padding no-margin-items">
+			<%= label_tag :second_price, 'Precio máximo' %>
+			<p class="align-right">$ <%= number_field_tag :second_price, nil, class: "price" %></p>
+		</div>
 
-		<%= label_tag :tags, 'Tags' %>
-		<%= text_field_tag :tags %>
+		<%= text_field_tag :tags, nil, placeholder: "Tags separados por ',' " %>
 
-		<%= label_tag :distance %>
-		<%= number_field_tag :distance %>
+
+		<div class="col-5 col-offset-7 no-padding no-margin-items">
+			<p class="align-right"><%= number_field_tag :distance, nil, placeholder: "Distancia", class: "price" %> km</p>
+		</div>
+
+		<div class="row"></div>
 
 		<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
 		<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>

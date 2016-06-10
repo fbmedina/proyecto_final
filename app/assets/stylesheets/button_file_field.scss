@@ -37,3 +37,30 @@ label.upload_store_photo img,
 label.upload_cover_store_photo img {
 	border-radius: 0;
 }
+
+input[type="submit"] {
+	border: 0;
+}
+
+input.star[type="submit"] {
+	background: image-url("star.svg") no-repeat center center transparent;
+	width: 2em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+input.price[type="number"] {
+	width: 80%;
+}
+
+input.distance[type="number"] {
+	width: 30%;
+}
