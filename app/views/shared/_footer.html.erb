@@ -1,20 +1,20 @@
 <footer class="footer-perpetual col-12 half-padding">
 	<nav>
 		<ul>
-			<li class="col-3 double-padding-sides">
-				<%= link_to image_tag("isotype.svg"), pages_index_path %>
+			<li class="col-3 triple-padding-sides">
+				<%= link_to image_tag("isotype.svg"), pages_index_path, class: "not-bordered" %>
 			</li>
-			<li class="col-3 double-padding-sides">
-				<%= link_to image_tag("search.svg"), search_searches_path %>
+			<li class="col-3 triple-padding-sides">
+				<%= link_to image_tag("search.svg"), search_searches_path, class: "not-bordered" %>
 			</li>
-			<li class="col-3 double-padding-sides">
-				<%= link_to image_tag("friends.svg") %>
+			<li class="col-3 triple-padding-sides">
+				<%= link_to image_tag("friends.svg"), class: "not-bordered" %>
 			</li>
-			<li class="col-3 double-padding-sides">
+			<li class="col-3 triple-padding-sides">
 				<% if current_user.store.nil? %>
-					<%= link_to image_tag("store.svg"), new_store_path %>
+					<%= link_to image_tag("store.svg"), new_store_path, class: "not-bordered" %>
 				<% else %>
-					<%= link_to image_tag("store.svg"), current_user.store %>
+					<%= link_to image_tag("store.svg"), current_user.store, class: "not-bordered" %>
 				<% end %>
 			</li>
 		</ul>

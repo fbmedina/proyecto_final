@@ -4,6 +4,10 @@ img.not-bordered {
 	border-radius: 0;
 }
 
+a.not-bordered img {
+	border-radius: 0;
+}
+
 img.icon {
 	border-radius: 0px;
 	width: 1.25em;
@@ -57,6 +61,9 @@ header.header-perpetual {
 	z-index: 9;
 	max-width: 375px;
 	margin: 0 auto;
+	background: $principalBrown;
+	display: flex;
+	align-items: center;
 }
 
 footer.footer-perpetual {
@@ -65,6 +72,8 @@ footer.footer-perpetual {
 	z-index: 9;
 	max-width: 375px;
 	margin: 0 auto;
+	background: $principalWhite;
+	border-top: 1.5px solid $principalBrown;
 }
 
 .circle {
@@ -123,6 +132,10 @@ img.less-size, a.less-size img {
 
 .double-padding-sides {
 	padding: 0 1.75em;
+}
+
+.triple-padding-sides {
+	padding: 0 2.5em;
 }
 
 .top {
