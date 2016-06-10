@@ -25,7 +25,9 @@
         <%= link_to image_tag("garbage.svg"), [product.store, product], method: :delete, data: { confirm: 'Are you sure?' }%>
       </p>
     <% end %>
+  </div>
 
+  <div class="col-6 col-offset-3">
     <% @user_wishlists.each do |user_wishlist| %>
       <div class="col-4 half-padding">
       <% if user_wishlist.products.include? product %>

@@ -1,11 +1,13 @@
 <div class="col-12 top no-padding">
-	<%= image_tag "default_cover_photo.png", class: "not-bordered" %>
-</div>
+	<%= image_tag "default_cover_photo.png", class: "not-bordered top under" %>
 
-<div class="col-3 col-offset-1 no-padding">
-	<%= image_tag @user.avatar, class: "circle" %>
-</div>
+	<div class="profile-overlaying">
+		<div class="col-3 col-offset-1 no-padding">
+			<%= image_tag @user.avatar, class: "circle" %>
+		</div>
 
-<div class="col-7">
-	<%= link_to @user.name, @user %>
+		<div class="col-7">
+			<h2><%= link_to @user.name, @user %></h2>
+		</div>
+	</div>
 </div>
