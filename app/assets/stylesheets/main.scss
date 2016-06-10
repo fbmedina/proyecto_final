@@ -1,7 +1,7 @@
 @import "variables";
 
 img.not-bordered {
-	border-radius: 0px;
+	border-radius: 0;
 }
 
 img.icon {
@@ -41,6 +41,11 @@ a.circle img {
 	box-shadow: none;
 }
 
+.button.full-size {
+	width: 100%;
+	margin: 0 auto;
+}
+
 header.header-perpetual {
 	top: 0;
 	position: fixed;
@@ -63,7 +68,7 @@ footer.footer-perpetual {
 }
 
 main {
-	margin: 5.5em 0 7.5em 0;
+	margin: 5em 0 7.5em 0;
 	bottom: 10em;
 }
 
@@ -155,6 +160,7 @@ input[type="submit"] {
 
 input.star[type="submit"] {
 	background: image-url("star.svg") no-repeat center center transparent;
+	width: 2em;
 }
 
 input[type="text"],
@@ -173,6 +179,10 @@ input.price[type="number"] {
 
 .relative {
 	position: relative;
+}
+
+.no-margin {
+	margin-top: 0;
 }
 
 .metro-line::before {
