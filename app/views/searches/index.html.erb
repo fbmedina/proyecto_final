@@ -9,35 +9,25 @@
 </div>
 
 <%= form_tag search_searches_path do %>
-	<div class="field">
-		<%= label_tag :distance %>
-		<%= number_field_tag :distance %>
-	</div>
-
-	<div class="field">
+	<div class="col-10 col-offset-1 other-background">
 		<%= label_tag :key_word, 'Filtrar' %>
 		<%= text_field_tag :key_word %>
-	</div>
 
-	<div class="field">
 		<%= label_tag :first_price, 'Price between' %>
-		<%= number_field_tag :first_price, 0, step: 500 %>
+		<%= number_field_tag :first_price, 0 %>
 		<%= label_tag :second_price, 'and' %>
-		<%= number_field_tag :second_price, nil, step: 500 %>
-	</div>
+		<%= number_field_tag :second_price %>
 
-	<div class="field">
 		<%= label_tag :tags, 'Tags' %>
 		<%= text_field_tag :tags %>
+
+		<%= label_tag :distance %>
+		<%= number_field_tag :distance %>
+
+		<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
+		<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>
+		<%= submit_tag 'Filtar', class: "button" %>
 	</div>
-
-	<div class="field">
-
-	</div>
-
-	<%= hidden_field_tag :latitude, nil, id: "user_latitude" %>
-	<%= hidden_field_tag :longitude, nil, id: "user_longitude" %>
-	<%= submit_tag 'Filtar', class: "button" %>
 <% end %>
 
 <%= render partial: "products/product" %>

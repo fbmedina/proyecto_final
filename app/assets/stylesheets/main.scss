@@ -13,6 +13,11 @@ a.circle img {
 	border-radius: 100%;
 }
 
+.other-background {
+	background: $otherBackgroundBrown;
+	border-radius: 0.5em;
+}
+
 .button {
 	background-color: $buttonBrown;
 	color: $principalWhite;

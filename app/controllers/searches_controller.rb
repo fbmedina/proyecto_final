@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
   
   def index
+    distance = params[:distance]
     first_price = params[:first_price].present? ? params[:first_price] : 0
     current_user.latitude = params[:latitude]
     current_user.longitude = params[:longitude]
