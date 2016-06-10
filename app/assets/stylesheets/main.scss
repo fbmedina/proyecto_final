@@ -55,6 +55,16 @@ a.circle img {
 	margin: 0 auto;
 }
 
+.button.facebook {
+	background-color: $facebook;
+	box-shadow: 0 0.25em 0 $darkFacebook;
+	padding: 0.75em;
+}
+
+.button.facebook:active { 
+	box-shadow: none;
+}
+
 header.header-perpetual {
 	top: 0;
 	position: fixed;
@@ -88,6 +98,11 @@ main {
 
 main div {
 	margin: 0.5em 0 0.5em 0;
+}
+
+main.threshold {
+	margin: 0;
+	bottom: 0;
 }
 
 .linebreak {
