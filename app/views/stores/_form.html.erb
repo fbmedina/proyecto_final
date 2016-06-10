@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="col-12 no-padding top">
+  <div class="col-12 no-padding top under">
     <% if @store.cover_photo? %>
       <%= image_tag @store.cover_photo, class: "not-bordered under" %>
     <% else %>
@@ -24,9 +24,14 @@
           <%= image_tag "camera.svg" %>
           <%= f.file_field :photo %>
         </label>
-        <%= f.hidden_field :photo_cache %>
-        <%= image_tag(@store.photo) if @store.photo? %>
       </div>
+
+    <div class="store-overlaying">
+      <div class="col-3 col-offset-1 no-padding photo-field absolute">
+        <%= f.hidden_field :photo_cache %>
+        <%= image_tag @store.photo, class: "circle under" if @store.photo? %>
+      </div>
+    </div>
 
       <div class="col-7 inline half-padding">
         <div class="col-9 no-padding">

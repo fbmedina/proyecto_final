@@ -1,6 +1,6 @@
 .under {
 	position: relative;
-	z-index: -2;
+	z-index: -3;
 }
 
 .principal-buttons-overlaying {
@@ -52,4 +52,8 @@
 .threshold-overlaying {
 	z-index: -1;
 	margin-top: -20%;
+}
+
+.absolute {
+	position: absolute;
 }
