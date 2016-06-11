@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'thresholds/second_view'
-
-  get 'thresholds/third_view'
-
   get 'pages/index'
 
   resources :stores do 
