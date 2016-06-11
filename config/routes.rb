@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'thresholds/second_view'
+
+  get 'thresholds/third_view'
+
   get 'pages/index'
-
-  get 'thresholds/page1'
-
-  get 'thresholds/page2'
-
-  get 'thresholds/page3'
 
   resources :stores do 
     resources :comments, module: :stores, only: [:create, :destroy]
