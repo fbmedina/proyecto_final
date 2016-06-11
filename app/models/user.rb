@@ -25,24 +25,22 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   def self.find_for_facebook_oauth(auth)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
-    
-    return user if user
-    
-    # Check if the User is already registered without Facebook
-    user = User.where(email: auth.info.email).first
-    return user if user
+    user_found = where(provider: auth.provider, uid: auth.uid).first
 
-    User.create(
-      name: auth.info.name, 
-      provider: auth.provider, 
-      uid: auth.uid, 
-      email: auth.info.email,
-      avatar: auth.info.image,
-      # cover_photo: auth.extra.raw_info.cover,
-      gender: auth.extra.raw_info.gender,
-      birthday: auth.extra.raw_info.birthday,
-      password: Devise.friendly_token[0,20])
+    if user_found.nil?
+      user = new
+      user.provider = auth.provider, 
+      user.uid = auth.uid,
+      user.name = auth.info.name,  
+      user.email = auth.info.email,
+      user.remote_avatar_url = auth.info.image,
+      user.gender = auth.extra.raw_info.gender,
+      user.birthday = auth.extra.raw_info.birthday,
+      user.password = Devise.friendly_token[0,20]
+      user.save
+    end
+
+    user_found || user
   end
 
   def to_s
