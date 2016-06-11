@@ -18,4 +18,24 @@ class Product < ActiveRecord::Base
   def to_s
     self.name
   end
+
+  def search_next
+
+  end
+
+  def store_next
+    self.store.products.where("id > ?", self.id).order(:id).limit(1).first
+  end
+
+  def store_previous
+    self.store.products.where("id < ?", self.id).order("id DESC").limit(1).first
+  end
+
+  def has_next?
+    (self.store.products.where("id > ?", self.id).count > 0) ? true : false
+  end
+
+  def has_previous?
+    (self.store.products.where("id < ?", self.id).count > 0) ? true : false
+  end
 end
