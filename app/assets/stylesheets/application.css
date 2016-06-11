@@ -15,6 +15,7 @@
  *= require body
  *= require grid
  *= require main
+ *= require colors_for_svg
  *= require carrousel
  *= require button_file_field
  *= require drop_down

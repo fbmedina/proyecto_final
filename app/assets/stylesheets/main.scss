@@ -22,6 +22,14 @@ a.circle img {
 	border-radius: 100%;
 }
 
+a.white {
+	color: $principalWhite;
+}
+
+.white {
+	color: $principalWhite;
+}
+
 .other-background {
 	background: $otherBackgroundBrown;
 	border-radius: 0.5em;
@@ -111,19 +119,17 @@ main.threshold {
 }
 
 .linebreak {
-	background: image-url("hr.svg") no-repeat center center transparent;
-	clear: both;
 	height: 2px;
 }
 
 .aside-hr-left {
-	background: image-url("aside_hr_left.svg") no-repeat center center transparent;
-	margin-top: 1.5em;
+	padding: 0;
+	margin-top: 1.75em; 
 }
 
 .aside-hr-right {
-	background: image-url("aside_hr_right.svg") no-repeat center center transparent;
-	margin-top: 1.5em;
+	padding: 0;
+	margin-top: 1.75em; 
 }
 
 
@@ -250,4 +256,8 @@ div.panel {
 
 .metro-line.green::before {
 	background: $lineGreen;
+}
+
+a.unselected img{
+	opacity: .3;
 }
