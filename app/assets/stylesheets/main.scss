@@ -82,6 +82,10 @@ a.white {
 	box-shadow: none;
 }
 
+.button.more-margin {
+	margin-top: 1em;
+}
+
 header.header-perpetual {
 	top: 0;
 	position: fixed;
@@ -261,6 +265,6 @@ div.panel {
 	background: $lineGreen;
 }
 
-a.unselected img{
+.unselected{
 	opacity: .3;
 }

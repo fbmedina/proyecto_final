@@ -32,11 +32,8 @@
 
   <div class="col-7 col-offset-1">
     <p><%= @store.description %></p>
-    <div class="col-3 col-offset-2 no-padding">
-      <%= image_tag "whatsapp.svg" %>
-    </div>
-    <div class= "col-7 no-padding">
-      <h3 class="align-right"><%= @store.phone_number %></h3>
+    <div class="col-11 no-padding">
+      <a href="#" class="button full-size"><%= image_tag "whatsapp.svg", class: "icon" %> <%= @store.phone_number %></a>
     </div>
   </div>
 
