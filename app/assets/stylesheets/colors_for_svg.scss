@@ -24,12 +24,28 @@ path {
 	fill: $lightBrown;
 }
 
-.active path {
+.page-active path {
 	fill: $principalBrown;
+}
+
+.red {
+	fill: $lineRed;
 }
 
 .yellow {
 	fill: $lineYellow;
+}
+
+.blue {
+	fill: $lineBlue;
+}
+
+.light-blue {
+	fill: $lineLightBlue;
+}
+
+.green {
+	fill: $lineGreen;
 }
 
 .lightBrown {
