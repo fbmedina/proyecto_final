@@ -43,7 +43,7 @@ Wishlist.create(
   )
 end
 
-Line.create([{name: "1"}, {name: "2"}, {name: "4"}, {name: "4a"}, {name: "5"}])
+Line.create([{name: "1", alias: 'red'}, {name: "2", alias: 'yellow'}, {name: "4", alias: 'blue'}, {name: "4a", alias: 'light-blue'}, {name: "5", alias: 'green'}])
 
 CSV.foreach(File.join(Rails.root, 'db', 'data', 'metros.csv'), headers: true, encoding: 'UTF-8') do |row|
   stations << Station.create(row.to_hash)

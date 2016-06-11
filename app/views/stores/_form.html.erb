@@ -109,7 +109,7 @@
     <h3 class="text-center top">¿Dónde entregas?</h3>
       <% @lines.each do |line| %>
         <h3 class="accordion"><%= image_tag "metro.svg", class: "icon" %>Línea <%= line.name %></h3>
-        <div class="panel block relative metro-line">
+        <div class="panel block relative metro-line <%= line.alias %>">
           <%= f.collection_check_boxes :station_ids, line.stations, :id, :name do |b| %>
             <%= b.label { b.check_box + b.text } %>
           <% end %>
