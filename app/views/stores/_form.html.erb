@@ -28,13 +28,6 @@
         </label>
       </div>
 
-    <div class="store-overlaying">
-      <div class="col-3 col-offset-1 no-padding photo-field absolute">
-        <%= f.hidden_field :photo_cache %>
-        <%= image_tag @store.photo, class: "circle under" if @store.photo? %>
-      </div>
-    </div>
-
       <div class="col-7 inline half-padding">
         <div class="col-9 no-padding">
           <h2>
@@ -53,6 +46,17 @@
       </div>
     </div>
   </div>
+
+        <!-- <div class="col-3 col-offset-1 no-padding photo-field absolute">
+          <#%= f.hidden_field :photo_cache %>
+          <#%= image_tag @store.photo, class: "circle under" if @store.photo? %>
+        </div>
+
+        <#% if @store.cover_photo? %>
+          <#%= image_tag @store.cover_photo, class: "not-bordered under" %>
+        <#% else %>
+          <#%= image_tag "default_cover_photo.png", class: "not-bordered under" %>
+        <#% end %> -->
 
 <div class="col-12 no-padding top">
   <div class="col-2 col-offset-1">
