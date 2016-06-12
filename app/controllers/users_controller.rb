@@ -8,10 +8,5 @@ class UsersController < ApplicationController
     @user = User.koala(request.env['omniauth.auth']['credentials'])
   end
 
-  private
-
-    def user_params
-      params.require(:user).permit(:avatar)
-    end
 
 end
