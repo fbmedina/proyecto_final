@@ -10,7 +10,7 @@
       <div class="col-9 no-padding"><h2><%= @store.name %></h2></div>
         <div class="col-3 no-padding align-right inline">
           <%= render partial: "likes/form_store", locals: {likeable: @store} %>
-          <h3><%= @store.likes.count %></h3>
+          <h3><%= @store.likes.count class: "bold" %></h3>
         </div>
     </div>
   </div>
