@@ -51,7 +51,6 @@ class StoresControllerTest < ActionController::TestCase
   test "logged user should create a store" do
     sign_in(users(:logged))
     assert_difference('Store.count') do 
-      byebug
       post :create, store: {name: "La Tiendita"}
     end
     assert_redirected_to store_path(assigns(:store))
