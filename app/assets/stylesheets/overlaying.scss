@@ -35,6 +35,17 @@
 	margin-top: -25%;
 }
 
+.carrousel-icon-store-overlaying {
+	z-index: 1;
+	padding: 0;
+	margin-top: -25%;
+	position: absolute;
+}
+
+.carrousel-icon-store-overlaying svg{
+	width: 100%;
+}
+
 .information-product-overlaying {
 	position: absolute;
 	z-index: 2;

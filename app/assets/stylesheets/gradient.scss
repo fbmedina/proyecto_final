@@ -9,7 +9,7 @@
 	position: absolute;
 }
 
-.gradient-for-product, .gradient-for-show-product {
+.gradient-for-product, .gradient-for-show-product, .gradient-for-carrousel-product {
 	width: 100%;
 	z-index: -1;
 	background: -moz-linear-gradient(top, $darkBrownTransparent 45%, $darkBrownSemiTransparent 100%);
@@ -39,4 +39,12 @@
 	height: 375px;
 	top: -5%;
 	border-radius: 0.5em;
+}
+
+.gradient-for-carrousel-product {
+	width: 113px;
+	height: 113px;
+	top: 0;
+	border-radius: 0.5em;
+	z-index: 1;
 }

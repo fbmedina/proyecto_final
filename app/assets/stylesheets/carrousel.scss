@@ -1,10 +1,14 @@
+@import "variables";
+
 .bx-wrapper .bx-viewport {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	border:  none;
-	left: -5px;
+	border: none;
 	background: transparent;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0;
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
@@ -12,4 +16,18 @@
     	-ms-transform: translatez(0);
     	-o-transform: translatez(0);
     	transform: translatez(0);
+}
+
+.bx-wrapper {
+	max-width: 600px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background: $principalBrown;
+	opacity: .3;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: $principalBrown;
+	opacity: 1;
 }
