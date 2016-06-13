@@ -1,6 +1,6 @@
 @import "variables";
 
-.gradient-for-store, .gradient-for-show-store {
+.gradient-for-store, .gradient-for-show-store-and-profile {
 	width: 100%;
 	z-index: -1;
 	background: -moz-linear-gradient(top, $darkBrownTransparent 25%, $darkBrownSemiTransparent 100%);
@@ -24,7 +24,7 @@
 	border-radius: 0.5em;
 }
 
-.gradient-for-show-store {
+.gradient-for-show-store-and-profile {
 	height: 117px;
 	top: -33%;
 }
