@@ -2,9 +2,9 @@
 	<div class="col-2 no-padding">
 		<%= image_tag current_user.avatar, class: "circle" %>
 	</div>
-	<div class="col-10 no-padding align-right">
+	<div class="col-10 top align-right">
 	<%= form_for [@store, commentable, Comment.new] do |f| %>
-		<%= f.text_area :content, placeholder: "Escriba un comentario", class: "col-12" %>
+		<%= f.text_area :content, placeholder: "Escriba un comentario", class: "full-size" %>
 		<%= f.submit "Comenta", class: "button" %>
 	<% end %>
 	</div>

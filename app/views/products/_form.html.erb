@@ -31,10 +31,10 @@
 
     <div class="col-6 no-top-padding">
       <h2><%= f.text_field :name, class: "title", placeholder: "Nombre" %></h2>
-      <h3 class="inline align-right">$ <%= f.number_field :price, placeholder: "Precio", class: "price" %></h3>
+      <h3 class="inline align-right">$ <%= f.number_field :price, placeholder: "Precio", class: "price", min: "0" %></h3>
       <p><%= f.text_area :description, placeholder: "Descripción" %></p>
       <p class="align-right"><%= f.text_field :tag_list, placeholder: "Tags separados por ','" %></p>
-      <p><%= f.number_field :stock, placeholder: "Cantidad disponible" %></p>
+      <p><%= f.number_field :stock, placeholder: "Cantidad disponible", min: "1" %></p>
     </div>
     <div class="col-6 col-offset-3 no-padding text-center">
       <%= f.submit class: "button" %>

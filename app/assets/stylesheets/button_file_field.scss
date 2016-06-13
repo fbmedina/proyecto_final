@@ -1,5 +1,27 @@
 @import "variables";
 
+input[type="text"], 
+input[type="number"] {
+    border: none;
+    border-bottom: 1px solid;
+}
+
+textarea {
+	width: 100%;
+	height: 5em;
+	resize: none;
+	border: 1px solid;
+}
+
+input[type="text"], 
+input[type="number"],
+textarea {
+	padding: 5px;
+	border-color: $lightBrown;
+	color: $principalBrown;
+	background: $principalWhite;
+}
+
 input[type="file"]{
 	width: 0.1px;
 	height: 0.1px;
@@ -59,20 +81,21 @@ input[type="file"] {
 	width: 100%;
 }
 
-textarea {
-	width: 100%;
+input.price,
+input.distance {
+	width: 80%;
 }
 
-input.price {
-	width: 80%;
+input.price[type=number]::-webkit-inner-spin-button, 
+input.price[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 input.phone-number {
 	width: 65%;
-}
-
-input.distance[type="number"] {
-	width: 30%;
 }
 
 .to-replace-with-cover-photo {
@@ -80,4 +103,11 @@ input.distance[type="number"] {
 	height: 117px;
 	background: $otherBackgroundBrown;
 	border: 0.2em dashed $principalBrown;
+}
+	
+.other-background input[type="text"],
+.other-background  input[type="number"],
+.other-background textarea {
+	color: $darkBrown;
+	border: none;
 }
