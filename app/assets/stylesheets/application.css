@@ -17,8 +17,8 @@
  *= require main
  *= require colors_for_svg
  *= require carrousel
- *= require button_file_field
  *= require drop_down
+ *= require button_file_field
  *= require overlaying
  *= require svg_masks
  *= require_self

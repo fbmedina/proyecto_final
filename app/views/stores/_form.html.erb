@@ -11,52 +11,62 @@
     </div>
   <% end %>
 
-  <div class="col-12 no-padding top">
+  <div class="col-12 no-padding">
     <% if @store.cover_photo? %>
-      <%= image_tag @store.cover_photo, class: "not-bordered under" %>
+      <%= image_tag @store.cover_photo, class: "not-bordered under top svg-store-and-profile-mask" %>
     <% else %>
-      <%= image_tag "default_cover_photo.png", class: "not-bordered under" %>
+      <div class="to-replace-with-cover-photo under top svg-store-and-profile-mask"></div>
     <% end %>
 
-    <div class="store-overlaying">
-      <div class="col-3 col-offset-1 no-padding photo-field">
-        <label class="upload_store_photo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 71.8" enable-background="new 0 0 100 71.8">
-            <path d="M63.7 40.1c0-7.6-6.1-13.7-13.7-13.7s-13.7 6.1-13.7 13.7 6.1 13.7 13.7 13.7 13.7-6.2 13.7-13.7zm7.8.2c0 11.8-9.6 21.4-21.5 21.4-11.8 0-21.4-9.6-21.4-21.4 0-3.3.8-6.6 2.3-9.5h-30.9v32.6c.1 4.6 3.8 8.3 8.4 8.4h83.3c4.6-.1 8.3-3.8 8.3-8.4v-32.6h-30.8c1.5 2.9 2.3 6.2 2.3 9.5zm20.5-31.5h-83.6c-4.5-.2-8.3 3.4-8.4 7.9v11.1h32.2c3.8-5 10.4-9.5 17.8-9.5s14 4.5 17.9 9.5h32.1v-11c0-4.4-3.6-8-8-8zm-25.5-1.7l-4.2-6.8c-.1-.2-.3-.3-.6-.3h-23c-.2 0-.4.1-.6.3-1.6 2.3-3.1 4.6-4.8 7h33.2c.1-.1.1-.2 0-.2zm-12.1-1.3h-8.4v-4.1h8.4v4.1zm-31.7-2.4c-.1-.2-.3-.3-.5-.3h-9c-.2 0-.4.1-.5.3-.5 1.2-1 2.5-1.6 3.8h13.1c-.5-1.4-1-2.6-1.5-3.8z"/>
-          </svg>
-          <%= f.file_field :photo %>
+    <div class="store-field-overlaying <%= 'store-overlaying' if @store.photo? %>">
+      <% if @store.photo? %>
+        <div class="col-3 col-offset-1 no-padding">
+          <%= link_to image_tag(@store.photo), @store, class: "circle under" %>
+          <div class="up-overlaying">
+            <label class="upload_store_photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 71.8" enable-background="new 0 0 100 71.8">
+                <path class="white" d="M63.7 40.1c0-7.6-6.1-13.7-13.7-13.7s-13.7 6.1-13.7 13.7 6.1 13.7 13.7 13.7 13.7-6.2 13.7-13.7zm7.8.2c0 11.8-9.6 21.4-21.5 21.4-11.8 0-21.4-9.6-21.4-21.4 0-3.3.8-6.6 2.3-9.5h-30.9v32.6c.1 4.6 3.8 8.3 8.4 8.4h83.3c4.6-.1 8.3-3.8 8.3-8.4v-32.6h-30.8c1.5 2.9 2.3 6.2 2.3 9.5zm20.5-31.5h-83.6c-4.5-.2-8.3 3.4-8.4 7.9v11.1h32.2c3.8-5 10.4-9.5 17.8-9.5s14 4.5 17.9 9.5h32.1v-11c0-4.4-3.6-8-8-8zm-25.5-1.7l-4.2-6.8c-.1-.2-.3-.3-.6-.3h-23c-.2 0-.4.1-.6.3-1.6 2.3-3.1 4.6-4.8 7h33.2c.1-.1.1-.2 0-.2zm-12.1-1.3h-8.4v-4.1h8.4v4.1zm-31.7-2.4c-.1-.2-.3-.3-.5-.3h-9c-.2 0-.4.1-.5.3-.5 1.2-1 2.5-1.6 3.8h13.1c-.5-1.4-1-2.6-1.5-3.8z"/>
+              </svg>
+              <%= f.file_field :photo %>
+            </label>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-3 col-offset-1 no-padding photo-field">
+          <label class="upload_store_photo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 71.8" enable-background="new 0 0 100 71.8">
+              <path d="M63.7 40.1c0-7.6-6.1-13.7-13.7-13.7s-13.7 6.1-13.7 13.7 6.1 13.7 13.7 13.7 13.7-6.2 13.7-13.7zm7.8.2c0 11.8-9.6 21.4-21.5 21.4-11.8 0-21.4-9.6-21.4-21.4 0-3.3.8-6.6 2.3-9.5h-30.9v32.6c.1 4.6 3.8 8.3 8.4 8.4h83.3c4.6-.1 8.3-3.8 8.3-8.4v-32.6h-30.8c1.5 2.9 2.3 6.2 2.3 9.5zm20.5-31.5h-83.6c-4.5-.2-8.3 3.4-8.4 7.9v11.1h32.2c3.8-5 10.4-9.5 17.8-9.5s14 4.5 17.9 9.5h32.1v-11c0-4.4-3.6-8-8-8zm-25.5-1.7l-4.2-6.8c-.1-.2-.3-.3-.6-.3h-23c-.2 0-.4.1-.6.3-1.6 2.3-3.1 4.6-4.8 7h33.2c.1-.1.1-.2 0-.2zm-12.1-1.3h-8.4v-4.1h8.4v4.1zm-31.7-2.4c-.1-.2-.3-.3-.5-.3h-9c-.2 0-.4.1-.5.3-.5 1.2-1 2.5-1.6 3.8h13.1c-.5-1.4-1-2.6-1.5-3.8z"/>
+            </svg>
+            <%= f.file_field :photo %>
         </label>
-      </div>
-
+        </div>
+      <% end %>
+        
       <div class="col-7 inline half-padding">
-        <div class="col-9 no-padding">
+        <div class="col-8 col-offset-1 no-padding">
           <h2>
-            <%= f.text_field :name, placeholder: "Nombre Tienda" %>
+            <%= f.text_field :name, placeholder: "Nombre tienda" %>
           </h2>
         </div>
+      <div class="col-2 col-offset-1 no-padding">
+          <label class="upload_cover_store_photo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 71.8" enable-background="new 0 0 100 71.8">
+              <path class="<%= 'white' if @store.cover_photo? %>" d="M63.7 40.1c0-7.6-6.1-13.7-13.7-13.7s-13.7 6.1-13.7 13.7 6.1 13.7 13.7 13.7 13.7-6.2 13.7-13.7zm7.8.2c0 11.8-9.6 21.4-21.5 21.4-11.8 0-21.4-9.6-21.4-21.4 0-3.3.8-6.6 2.3-9.5h-30.9v32.6c.1 4.6 3.8 8.3 8.4 8.4h83.3c4.6-.1 8.3-3.8 8.3-8.4v-32.6h-30.8c1.5 2.9 2.3 6.2 2.3 9.5zm20.5-31.5h-83.6c-4.5-.2-8.3 3.4-8.4 7.9v11.1h32.2c3.8-5 10.4-9.5 17.8-9.5s14 4.5 17.9 9.5h32.1v-11c0-4.4-3.6-8-8-8zm-25.5-1.7l-4.2-6.8c-.1-.2-.3-.3-.6-.3h-23c-.2 0-.4.1-.6.3-1.6 2.3-3.1 4.6-4.8 7h33.2c.1-.1.1-.2 0-.2zm-12.1-1.3h-8.4v-4.1h8.4v4.1zm-31.7-2.4c-.1-.2-.3-.3-.5-.3h-9c-.2 0-.4.1-.5.3-.5 1.2-1 2.5-1.6 3.8h13.1c-.5-1.4-1-2.6-1.5-3.8z"/>
+            </svg>
+            <%= f.file_field :cover_photo %>
+          </label>
+        </div>
       </div>
-      <div class="col-1 no-padding bottom">
-        <label class="upload_cover_store_photo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 71.8" enable-background="new 0 0 100 71.8">
-            <path class="white" d="M63.7 40.1c0-7.6-6.1-13.7-13.7-13.7s-13.7 6.1-13.7 13.7 6.1 13.7 13.7 13.7 13.7-6.2 13.7-13.7zm7.8.2c0 11.8-9.6 21.4-21.5 21.4-11.8 0-21.4-9.6-21.4-21.4 0-3.3.8-6.6 2.3-9.5h-30.9v32.6c.1 4.6 3.8 8.3 8.4 8.4h83.3c4.6-.1 8.3-3.8 8.3-8.4v-32.6h-30.8c1.5 2.9 2.3 6.2 2.3 9.5zm20.5-31.5h-83.6c-4.5-.2-8.3 3.4-8.4 7.9v11.1h32.2c3.8-5 10.4-9.5 17.8-9.5s14 4.5 17.9 9.5h32.1v-11c0-4.4-3.6-8-8-8zm-25.5-1.7l-4.2-6.8c-.1-.2-.3-.3-.6-.3h-23c-.2 0-.4.1-.6.3-1.6 2.3-3.1 4.6-4.8 7h33.2c.1-.1.1-.2 0-.2zm-12.1-1.3h-8.4v-4.1h8.4v4.1zm-31.7-2.4c-.1-.2-.3-.3-.5-.3h-9c-.2 0-.4.1-.5.3-.5 1.2-1 2.5-1.6 3.8h13.1c-.5-1.4-1-2.6-1.5-3.8z"/>
-          </svg>
-          <%= f.file_field :cover_photo %>
-        </label>
-        <%= f.hidden_field :cover_photo_cache %>
-      </div>
-    </div>
+    </div> 
+
+    <%= f.hidden_field :cover_photo_cache %>
+    <%= f.hidden_field :photo_cache %>
+
   </div>
 
         <!-- <div class="col-3 col-offset-1 no-padding photo-field absolute">
-          <#%= f.hidden_field :photo_cache %>
           <#%= image_tag @store.photo, class: "circle under" if @store.photo? %>
-        </div>
-
-        <#% if @store.cover_photo? %>
-          <#%= image_tag @store.cover_photo, class: "not-bordered under" %>
-        <#% else %>
-          <#%= image_tag "default_cover_photo.png", class: "not-bordered under" %>
-        <#% end %> -->
+        </div> -->
 
 <div class="col-12 no-padding top">
   <div class="col-2 col-offset-1">
@@ -77,14 +87,14 @@
     </div>
 
     <div class="col-12 no-padding">
-      <a href="#" class="myButton">
+      <a href="#" class="myButton2">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" enable-background="new 0 0 100 100">
           <path class="instagram" d="M50.2 36.1c-7-.1-12.8 5.6-12.9 12.7v.3c-.1 7.4 5.5 13.3 12.5 13.4 7 0 12.8-5.7 12.8-12.8v-.3c0-7.3-5.5-13.2-12.4-13.3zm40.7-36.1h-81.5c-4.7 0-6.9 1.4-9.4 7.1v84c0 4.9 3.8 8.9 9.4 8.9h81.5c4.8 0 6.6-3.1 9.1-8.8v-84c0-5-3.5-7.2-9.1-7.2zm-1.9 70.2c.1 10.2-8.1 18.7-18.3 18.8h-39.3c-10.5 0-20.4-8-20.4-18.8v-40c0-10.7 9.9-20.2 20.4-20.2h38.8c10.4 0 18.8 9.5 18.8 20.2v40zm-19.9-53.7h-37.2c-7.2.1-13 6.1-12.9 13.4v38.7c-.1 7.3 5.7 13.3 12.9 13.4h37.2c7.2-.1 13-6.1 12.9-13.4v-38.7c.1-7.3-5.6-13.3-12.9-13.4zm-19.3 52.9c-10.9-.1-19.5-9.1-19.5-20.3 0-11.2 8.7-20.4 19.6-20.4 10.9 0 19.6 9.1 19.6 20.4 0 11.3-8.8 20.4-19.7 20.3zm25-41.4c.1 2.5-1.9 4.6-4.5 4.7-2.6-.1-4.6-2.2-4.7-4.8 0-2.6 2-4.7 4.6-4.7 2.5 0 4.5 1.9 4.6 4.5v.3z"/>
         </svg>
       </a>
       <div class="dropDownField2">
         <%= f.text_field :instagram_link, class: "no-padding" %>
-        <div class="myButton col-2 col-offset-10 no-padding">
+        <div class="myButton2 col-2 col-offset-10 no-padding">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path d="M50 0a50 50 0 1 0 50 50 50 50 0 0 0-50-50zm30 39.87a105.53 105.53 0 0 1-10.6 11.51c-4.27 4.08-8.29 8.43-12.59 12.49-3.43 3.22-6.32 7-10.35 9.61-2.86 1.83-5.71 2-8.51-.08-6.64-5-12.06-11.32-17.36-17.64-1.81-2.15-3.22-5.31 0-8.08s6.78-3.29 9.77-.59c3.24 2.92 6.33 6 9.27 9.26 1.9 2.09 3.24 2.28 5.19 0a326.27 326.27 0 0 1 24.6-24.6c2.25-2.08 4.73-3.22 7.51-2a6.68 6.68 0 0 1 4.38 6 6.85 6.85 0 0 1-1.31 4.12z"/>
           </svg>
@@ -97,13 +107,14 @@
     <p>
       <%= f.text_area :description, placeholder: "Descripción de tu tienda" %>
     </p>
-    <div class="col-3 col-offset-2 no-padding">
-      <%= image_tag "whatsapp.svg" %>
-    </div>
-    <div class= "col-7 no-padding">
-      <h3 class="align-right">
-        <%= f.text_field :phone_number, placeholder: "Celular" %>
-      </h3>
+
+    <div class="col-10 col-offset-1 no-padding">
+      <div class="button full-size icon whatsapp white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" enable-background="new 0 0 100 100">
+          <path class="white" d="M73.4 58.5c-1.2-.6-7.1-3.5-8.2-3.9-1.1-.4-1.9-.6-2.7.6-.8 1.2-3.1 3.9-3.8 4.7-.7.8-1.4.9-2.6.3-1.2-.6-5.1-1.9-9.7-5.9-3.6-3.2-6-7.1-6.7-8.3s-.1-1.8.5-2.4c.5-.5 1.2-1.4 1.8-2.1s.8-1.2 1.2-2c.4-.8.2-1.5-.1-2.1-.3-.6-2.7-6.5-3.7-8.9-1-2.4-2-2-2.7-2s-1.5-.1-2.3-.1c-.8 0-2.1.3-3.2 1.5s-4.2 4.1-4.2 10 4.3 11.6 4.9 12.3c.6.8 8.3 13.2 20.6 18 12.2 4.8 12.2 3.2 14.4 3 2.2-.2 7.1-2.9 8.1-5.7 1-2.7 1-5.1.7-5.6s-1.1-.8-2.3-1.4zm-22.5-58.5c-27.1 0-49.1 21.8-49 48.7 0 9.3 2.5 17.9 7 25.2l-8.9 26.1 27.2-8.7c7 3.9 15.1 6.1 23.7 6.1 27.1 0 49.1-21.8 49.1-48.7 0-26.9-22-48.7-49.1-48.7zm0 89.8c-8.4 0-16.2-2.5-22.7-6.8l-15.9 5 5.2-15.2c-5-6.7-7.9-15-7.9-24 0-22.6 18.5-41 41.3-41 22.8 0 41.3 18.4 41.3 41s-18.5 41-41.3 41z"/>
+        </svg>
+         +569 <%= f.text_field :phone_number, placeholder: "Celular", class: "phone-number" %>
+      </div>
     </div>
   </div>
 

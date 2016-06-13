@@ -11,22 +11,16 @@
 	width: 100%;
 }
 
-.store-overlaying {
-	z-index: -1;
-	padding: 0;
-	margin-top: -17.5%;
-}
-
-.profile-overlaying {
-	z-index: -1;
-	padding: 0;
-	margin-top: -20%;
-}
-
 .store-field-overlaying {
 	z-index: -1;
 	padding: 0;
-	margin-top: -43%;
+	margin-top: -19%;
+}
+
+.store-overlaying, .profile-overlaying  {
+	z-index: -1;
+	padding: 0;
+	margin-top: -17.5%;
 }
 
 .title-overlaying {
@@ -54,4 +48,9 @@
 .threshold-overlaying {
 	z-index: -1;
 	margin-top: -20.5%;
+}
+
+.up-overlaying {
+	margin-top: -100%;
+	z-index: 3;
 }
