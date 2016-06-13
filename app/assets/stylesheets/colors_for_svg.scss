@@ -24,10 +24,6 @@ path {
 	fill: $lightBrown;
 }
 
-.page-active path {
-	fill: $principalBrown;
-}
-
 .red {
 	fill: $lineRed;
 }
@@ -53,5 +49,9 @@ path {
 }
 
 .brown {
+	fill: $principalBrown;
+}
+
+.page-active path {
 	fill: $principalBrown;
 }

@@ -265,6 +265,10 @@ div.panel {
 	background: $lineGreen;
 }
 
-.unselected{
+.unselected, .inactive {
 	opacity: .3;
+}
+
+.page-active {
+	opacity: 1;
 }
