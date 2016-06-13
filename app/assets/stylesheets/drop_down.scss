@@ -11,9 +11,14 @@
 	background: $otherBackgroundBrown;
 	width: 25%;
 	padding: 5.5em 0.5em 0.5em 0.5em;
-	right: 0.5%;
+	right: 0.2%;
 	top: 0;
 	z-index: -1;
+}
+
+.dropDownMenu li ul li {
+	border-left: 0.1em solid $principalBrown;
+	padding-left: 0.5em;
 }
 
 .dropDownField,
