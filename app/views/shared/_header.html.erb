@@ -19,7 +19,10 @@
 	<div class="col-2 col-offset-2 myMenu half-padding">
 		<ul class="dropDownMenu">
 			<li><%= link_to image_tag(current_user.avatar), "#", class: "circle less-size" %>
-				<ul class="specific-width">
+				<ul>
+					<% current_user.user_wishlists.each do |user_wishlist| %>
+						<li><%= link_to "#{user_wishlist.wishlist.name} (#{user_wishlist.products.count})", [current_user, user_wishlist] %></li>
+					<% end %>
 					<li><%= link_to 'Ver perfil', current_user %></li>
 					<li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>
 				</ul>

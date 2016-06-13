@@ -1,12 +1,19 @@
-.myButton, .myButton2 {
+@import "variables";
+
+.myButton, 
+.myButton2 {
 	cursor: pointer;
 }
 
 .dropDownMenu li ul {
 	display: none;
 	position: absolute;
-	background: red;
-	width: 16.666666666666668%;
+	background: $otherBackgroundBrown;
+	width: 25%;
+	padding: 5.5em 0.5em 0.5em 0.5em;
+	right: 0.5%;
+	top: 0;
+	z-index: -1;
 }
 
 .dropDownField,
