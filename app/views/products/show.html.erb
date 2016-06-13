@@ -1,5 +1,5 @@
 <div class="col-12 no-padding top">
-  <%= image_tag @product.photo, class: "not-bordered under top" %>
+  <%= image_tag @product.photo, class: "not-bordered under top svg-product-mask" %>
 </div>
 
 <div class="information-product-overlaying col-12 no-padding">
@@ -27,6 +27,10 @@
           <path d="M50 100a50 50 0 1 0-50-50 50 50 0 0 0 50 50zm-21.48-55.41l29.48-19.66a6.5 6.5 0 1 1 7.21 10.82l-21.37 14.25 21.38 14.25a6.5 6.5 0 1 1-7.22 10.82l-29.48-19.66a6.5 6.5 0 0 1 0-10.82z"/>
         </svg>
       </a>
+    <% else %>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path class="unselected" d="M50 100a50 50 0 1 0-50-50 50 50 0 0 0 50 50zm-21.48-55.41l29.48-19.66a6.5 6.5 0 1 1 7.21 10.82l-21.37 14.25 21.38 14.25a6.5 6.5 0 1 1-7.22 10.82l-29.48-19.66a6.5 6.5 0 0 1 0-10.82z"/>
+      </svg>
     <% end %>
   </div>
   <div class="col-2 col-offset-2 no-padding">
@@ -36,6 +40,10 @@
           <path d="M50 0a50 50 0 1 0 50 50 50 50 0 0 0-50-50zm21.48 55.41l-29.48 19.66a6.5 6.5 0 1 1-7.21-10.82l21.37-14.25-21.38-14.25a6.5 6.5 0 1 1 7.22-10.82l29.48 19.66a6.5 6.5 0 0 1 0 10.82z"/>
         </svg>
       </a>
+    <% else %>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path class="unselected" d="M50 0a50 50 0 1 0 50 50 50 50 0 0 0-50-50zm21.48 55.41l-29.48 19.66a6.5 6.5 0 1 1-7.21-10.82l21.37-14.25-21.38-14.25a6.5 6.5 0 1 1 7.22-10.82l29.48 19.66a6.5 6.5 0 0 1 0 10.82z"/>
+      </svg>
     <% end %>
   </div>
 </div>
