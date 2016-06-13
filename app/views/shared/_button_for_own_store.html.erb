@@ -3,8 +3,8 @@
 		<%= link_to "Crea una Tienda", new_store_path, class: "button full-size" %>
 	</div>
 <% else %>
-	<div class="col-4 col-offset-4 round-border text-center no-padding">
-		<%= image_tag "promo_store.png", class: "under" %>
+	<div class="col-4 col-offset-4 round-border text-center no-padding under">
+		<%= image_tag "promo_store.png" %>
 		<div class="principal-buttons-overlaying">
 
 			<a href=" <%= store_path current_user.store %> ">

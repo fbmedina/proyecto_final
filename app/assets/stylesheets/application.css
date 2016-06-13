@@ -20,5 +20,6 @@
  *= require button_file_field
  *= require drop_down
  *= require overlaying
+ *= require svg_masks
  *= require_self
  */

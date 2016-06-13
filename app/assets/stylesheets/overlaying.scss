@@ -4,15 +4,17 @@
 }
 
 .principal-buttons-overlaying {
-	z-index: -1;
+	z-index: 3;
 	padding: 2em 2em 0 2em;
 	margin-top: -115%;
+	position: absolute;
+	width: 100%;
 }
 
 .store-overlaying {
 	z-index: -1;
 	padding: 0;
-	margin-top: -20%;
+	margin-top: -17.5%;
 }
 
 .profile-overlaying {
@@ -51,5 +53,5 @@
 
 .threshold-overlaying {
 	z-index: -1;
-	margin-top: -20%;
+	margin-top: -20.5%;
 }
