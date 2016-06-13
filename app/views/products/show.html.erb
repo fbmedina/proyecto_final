@@ -13,7 +13,7 @@
 
   <div class="col-3 col-offset-7 align-right inline white">
   	<%= render partial: "likes/form", locals: {likeable: @product} %>
-      <h3><%= @product.likes.count class: "bold" %></h3>
+      <h3 class="bold"><%= @product.likes.count %></h3>
   </div>
 </div>
 

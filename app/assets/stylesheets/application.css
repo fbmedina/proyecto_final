@@ -20,6 +20,7 @@
  *= require drop_down
  *= require button_file_field
  *= require overlaying
+ *= require gradient
  *= require svg_masks
  *= require_self
  */

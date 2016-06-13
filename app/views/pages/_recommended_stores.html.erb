@@ -1,21 +1,22 @@
 <div class="col-12">
 	<% @stores.sample(3).each do |store| %>
-	    <div class="col-12 no-padding">
-	      <%= image_tag store.cover_photo, class: "under svg-store-and-profile-mask" %>
+		<div class="col-12 no-padding relative">
+	    	<%= image_tag store.cover_photo, class: "under svg-store-and-profile-mask" %>
+			<div class="gradient-for-store bottom svg-store-and-profile-mask "></div>
 
-	      <div class="store-overlaying">
-	          <div class="col-3 col-offset-1 no-padding">
-	            <%= link_to image_tag(store.photo), store, class: "circle" %>
-	          </div>
+			<div class="store-overlaying">
+		       	<div class="col-3 col-offset-1 no-padding">
+	            	<%= link_to image_tag(store.photo), store, class: "circle" %>
+	          	</div>
 
-	          <div class="col-7 inline half-padding white">
-	            <div class="col-8 col-offset-1 no-padding"><h2><%= link_to store.name, store %></h2></div>
-	            <div class="col-3 no-padding align-right">
-	              <%= render partial: "likes/form_store", locals: {likeable: store} %>
-	              <h3><%= store.likes.count class: "bold" %></h3>
-	            </div>
-	          </div>
-	      </div>
+		        <div class="col-7 inline half-padding white">
+		        	<div class="col-8 col-offset-1 no-padding"><h2><%= link_to store.name, store %></h2></div>
+		            <div class="col-3 no-padding align-right">
+		              	<%= render partial: "likes/form_store", locals: {likeable: store} %>
+		              	<h3 class="bold"><%= store.likes.count %></h3>
+		            </div>
+		        </div>
+		    </div>
 	    </div>
 	<% end %>
 </div>

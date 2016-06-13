@@ -1,0 +1,21 @@
+@import "variables";
+
+.gradient-for-store, .gradient-for-show-store {
+	width: 100%;
+	z-index: -1;
+	background: -moz-linear-gradient(top, $darkBrownTransparent 25%, $darkBrownSemiTransparent 100%);
+	background: -webkit-linear-gradient(top, $darkBrownTransparent 25%, $darkBrownSemiTransparent 100%);
+	background: linear-gradient(to bottom $darkBrownTransparent 25%, $darkBrownSemiTransparent 100%);
+	position: absolute;
+}
+
+.gradient-for-store {
+	height: 110px;
+	top: -24.5%;
+	border-radius: 0.5em;
+}
+
+.gradient-for-show-store {
+	height: 117px;
+	top: -33%;
+}
