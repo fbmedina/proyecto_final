@@ -52,6 +52,8 @@ gem 'koala', '~> 2.2'
 
 gem 'geocoder'
 
+gem 'puma'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -75,5 +77,12 @@ group :development do
   gem 'better_errors'
 
   gem 'faker'
+
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-ssh-doctor', require: false
 end
 
