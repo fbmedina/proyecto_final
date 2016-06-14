@@ -28,6 +28,11 @@
 	opacity: 1;
 }
 
+.bx-wrapper .bx-pager.bx-default-pager a:hover {
+	background: $principalBrown;
+	opacity: .6;
+}
+
 .bxslider {
 	margin-top: 1em;
 }
