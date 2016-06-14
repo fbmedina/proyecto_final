@@ -1,3 +1,5 @@
+@import "variables";
+
 .under {
 	position: relative;
 	z-index: -3;
@@ -61,6 +63,20 @@
 .threshold-overlaying {
 	z-index: -1;
 	margin-top: -20.5%;
+}
+
+@-moz-document url-prefix() {
+	.threshold-overlaying svg{
+		background: $principalWhite;
+		border-radius: 100%;
+		border: 0.5em solid $principalWhite;
+	}
+
+	.border-white {
+		background: $principalWhite;
+		border-radius: 100%;
+		border: 0.5em solid $principalWhite;
+	}
 }
 
 .up-overlaying {

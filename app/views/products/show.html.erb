@@ -18,7 +18,7 @@
   </div>
 
   <div class="buttons-product-overlaying col-12 no-padding">
-    <div class="col-2 col-offset-3 no-padding">
+    <div class="col-2 col-offset-3 no-padding border-white">
       <% if @product.has_previous? %>
         <a href=" <%= store_product_path @product.store, @product.store_previous %> ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -31,7 +31,7 @@
         </svg>
       <% end %>
     </div>
-    <div class="col-2 col-offset-2 no-padding">
+    <div class="col-2 col-offset-2 no-padding border-white">
       <% if @product.has_next? %>
         <a href=" <%= store_product_path @product.store, @product.store_next %> ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
