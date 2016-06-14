@@ -13,8 +13,12 @@
 	<%= render partial: 'shared/header' if user_signed_in? %>
 
 	<main class="col-12 no-padding">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
+		<% if notice %>
+			<p class="notice"><%= notice %></p>
+		<% elsif alert %>
+			<p class="alert"><%= alert %></p>
+		<% end %>
+		
 		<%= yield %>
 	</main>
 
