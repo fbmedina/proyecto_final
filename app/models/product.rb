@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   has_many :user_wishlists, through: :product_wishlists
   has_many :wishlists, through: :product_wishlists
 
-  validates :name, presence: true
+  validates :name,:photo, :price, presence: true
 
   acts_as_taggable
 
