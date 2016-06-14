@@ -113,8 +113,16 @@ input.phone-number {
 }
 	
 .other-background input[type="text"],
-.other-background  input[type="number"],
+.other-background input[type="number"],
 .other-background textarea {
 	color: $darkBrown;
 	border: none;
+}
+
+.check-box-label * {
+	margin: 0 1em;
+}
+
+.check-box-label *:first-child {
+	margin: 0 0.25em;
 }
