@@ -6,7 +6,7 @@
 	<%= render partial: "shared/aside_hr_right" %>
 </div>
 
-<%= form_tag search_searches_path do %>
+<%= form_tag search_searches_path, method: :get do %>
 	<div class="col-10 col-offset-1 other-background search">
 		<%= text_field_tag :key_word, nil, placeholder: "Palabra clave" %>
 
