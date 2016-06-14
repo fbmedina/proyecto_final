@@ -25,7 +25,7 @@ class CoverPhotoUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    ["default_store_cover_photo.png", "default_store_cover_photo2.png", "default_store_cover_photo3.png", "default_store_cover_photo4.png", "default_store_cover_photo5.png", "default_store_cover_photo6.png"].sample
+    ["default_store_cover_photo.png", "default_store_cover_photo2.png", "default_store_cover_photo3.png", "default_store_cover_photo4.png", "default_store_cover_photo5.png", "default_store_cover_photo6.png", "default_store_cover_photo7.png"].sample
   end
 
   # Process files as they are uploaded:

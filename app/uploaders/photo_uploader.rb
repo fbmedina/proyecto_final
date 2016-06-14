@@ -25,7 +25,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    "default_store_photo.png"
+    ["default_store_photo.png", "default_store_photo2.png", "default_store_photo3.png", "default_store_photo4.png", "default_store_photo5.png", "default_store_photo6.png", "default_store_photo7.png"].sample
   end
 
   # Process files as they are uploaded:
