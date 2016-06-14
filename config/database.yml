@@ -14,6 +14,6 @@ test:
 production:
   <<: *default
   host: localhost
-  database: proyecto_final_production
-  username: proyecto_final
+  database: regalame_production
+  username: ubuntu
   password: <%= ENV['PROYECTO_FINAL_DATABASE_PASSWORD'] %>
