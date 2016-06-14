@@ -8,7 +8,8 @@ class Ability
         can :read, :all
         can :create, [Like, Comment, Store]
         can :create, Product, store: { user_id: user.id }
-        can :delete, [Like, Comment, Store], user_id: user.id
+        can :delete, Like, user_id: user.id
+        can :destroy, [Comment, Store], user_id: user.id
         can :destroy, Product, store: { user_id: user.id }
         can :update, Store, user_id: user.id
         can :update, Product, store: { user_id: user.id }
