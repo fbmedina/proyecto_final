@@ -13,9 +13,9 @@ Store.destroy_all
 Wishlist.destroy_all
 User.destroy_all
 
-users = []
 stores = []
 stations = []
+profile_avatar = ["default_profile_avatar1", "default_profile_avatar2", "default_profile_avatar3","default_profile_avatar4","default_profile_avatar5","default_profile_avatar6"]
 
 Wishlist.create(
   name: "Lo Amo",
@@ -32,14 +32,14 @@ Wishlist.create(
   icon: "have_it.svg"
   )
 
-5.times do |u|
-  users << User.create!(
+22.times do |u|
+  User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     password: "password",
     role: 1,
     gender: "female",
-    remote_avatar_url: "http://lnx.cabinas.net/wp-content/uploads/2015/06/enviar-bellos-mensajes-por-el-celular-para-mujeres.jpg",
+    remote_avatar_url: profile_avatar.sample,
   )
 end
 
@@ -53,42 +53,291 @@ CSV.foreach(File.join(Rails.root, 'db', 'data', 'stationLines.csv'), headers: tr
   StationLine.create(row.to_hash)
 end
 
-5.times do |s|
-  u = users[s]
-  stores << Store.create(
-    name: Faker::Company.name,
-    description: Faker::Lorem.sentence(5),
-    phone_number: Faker::PhoneNumber.cell_phone,
-    user: u,
-    stations: stations.sample(5),
-    recommended: [true, false].sample,
-    remote_photo_url: "http://lorempixel.com/400/400/fashion",
-    remote_cover_photo_url: "http://lorempixel.com/400/125/fashion"
-  )
-end
+Store.create(
+{
+  name: "Strawberry Bazar",
+  description: Faker::Lorem.sentence(10),
+  photo: "store_photo_0021_1-Straberry-Bazar.png",
+  cover_photo: "store_cover_photo_0021_1-Straberry-Bazar.png",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 1,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
 
-20.times do |p|
-  Product.create(
-    name: Faker::Commerce.product_name,
-    description: Faker::Lorem.sentence(3),
-    price: Faker::Number.between(3000, 10000),
-    stock: Faker::Number.between(1, 10),
-    store: stores.sample,
-    best_seller: false,
-    remote_photo_url: "http://lorempixel.com/400/400/fashion",
-    tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
-  )
-end
+},
+{
+  name: "Solo Para Mi",
+  description: Faker::Lorem.sentence(10),
+  photo: "store_photo_0020_2-Solo-Para-Mi.png",
+  cover_photo: "store_cover_photo_0020_2-Solo-Para-Mi.png",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 2,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
 
-5.times do |p2|
-  Product.create(
-    name: Faker::Commerce.product_name,
-    description: Faker::Lorem.sentence(3),
-    price: Faker::Number.between(3000, 10000),
-    stock: Faker::Number.between(1, 10),
-    store: stores.sample,
-    best_seller: true,
-    remote_photo_url: "http://lorempixel.com/400/400/fashion",
-    tag_list: Faker::Hipster.words(4).map(&:inspect).join(', ')
+},
+{
+  name: "Positivo",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 3,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Violeta Mi Tienda",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 4,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Tu Regalo Chic",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 5,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Onitas",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 6,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Bohemian Accessories",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 7,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Conini Bazar",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 8,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Dango Family",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 9,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Ufisa Pink Shop",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 10,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Pikaboo",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 11,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Embasémonos",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 12,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Mochilas de Lana",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 13,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "The Culto Store",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 14,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Hydra",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 15,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Ruby Tuesday",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 16,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Külko",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 17,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Morenaa",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 18,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Tienda MCP",
+  description: Faker::Lorem.sentence(10),
+  photo: "",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 19,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Sharlie",
+  description: Faker::Lorem.sentence(10),
+  photo: "store_photo_0000_La-Hacedora.png",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 20,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "Frida Creaciones",
+  description: Faker::Lorem.sentence(10),
+  photo: "store_photo_0001_21-Frida-Creaciones.png",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 21,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
+{
+  name: "La Hacedora",
+  description: Faker::Lorem.sentence(10),
+  photo: "store_photo_0000_La-Hacedora.png",
+  cover_photo: "",
+  facebook_link: Faker::Internet.url("facebook.com"),
+  instagram_link: Faker::Internet.url("instagram.com"),
+  user_id: 22,
+  phone_number: Faker::Number.number(7),
+  recommended: [true, false].sample,
+  stations: stations.sample(5)
+
+},
   )
-end
