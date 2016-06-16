@@ -14,7 +14,7 @@ Wishlist.destroy_all
 User.destroy_all
 
 stations = []
-profile_avatar = ["default_profile_avatar1.png", "default_profile_avatar2.png", "default_profile_avatar3.png","default_profile_avatar4.png","default_profile_avatar5.png","default_profile_avatar6.png"]
+profile_avatar = [File.open(Rails.root + "app/assets/images/default_profile_avatar1.png"), File.open(Rails.root + "app/assets/images/default_profile_avatar2.png"), File.open(Rails.root + "app/assets/images/default_profile_avatar3.png"), File.open(Rails.root + "app/assets/images/default_profile_avatar4.png"),File.open(Rails.root + "app/assets/images/default_profile_avatar5.png"), File.open(Rails.root + "app/assets/images/default_profile_avatar6.png")]
 
 Wishlist.create(
   name: "Lo Amo",
@@ -56,8 +56,8 @@ Store.create([
     {
       name: "Strawberry Bazar",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0021_1-Straberry-Bazar.png",
-      cover_photo: "store_cover_photo_0021_1-Straberry-Bazar.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0021_1-Straberry-Bazar.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0021_1-Straberry-Bazar.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 1,
@@ -68,8 +68,8 @@ Store.create([
     {
       name: "Solo Para Mi",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0020_2-Solo-Para-Mi.png",
-      cover_photo: "store_cover_photo_0020_2-Solo-Para-Mi.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0020_2-Solo-Para-Mi.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0020_2-Solo-Para-Mi.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 2,
@@ -80,8 +80,8 @@ Store.create([
     {
       name: "Positivo",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0019_3-Positivo.png",
-      cover_photo: "store_cover_photo_0019_3-Positivo.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0019_3-Positivo.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0019_3-Positivo.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 3,
@@ -92,8 +92,8 @@ Store.create([
     {
       name: "Violeta Mi Tienda",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0018_4-Violeta-Mi-Tienda.png",
-      cover_photo: "store_cover_photo_0018_4-Violeta-Mi-Tienda.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0018_4-Violeta-Mi-Tienda.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0018_4-Violeta-Mi-Tienda.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 4,
@@ -104,8 +104,8 @@ Store.create([
     {
       name: "Tu Regalo Chic",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0017_5-Tu-Regalo-Chic",
-      cover_photo: "store_cover_photo_0017_5-Tu-Regalo-Chic.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0017_5-Tu-Regalo-Chic.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0017_5-Tu-Regalo-Chic.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 5,
@@ -116,8 +116,8 @@ Store.create([
     {
       name: "Onitas",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0016_6-Onitas",
-      cover_photo: "store_cover_photo_0016_6-Onitas.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0016_6-Onitas.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0016_6-Onitas.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 6,
@@ -128,8 +128,8 @@ Store.create([
     {
       name: "Bohemian Accessories",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0015_7-Bohemian-Accessories.png",
-      cover_photo: "store_cover_photo_0015_7-Bohemian-Accessories.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0015_7-Bohemian-Accessories.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0015_7-Bohemian-Accessories.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 7,
@@ -140,8 +140,8 @@ Store.create([
     {
       name: "Conini Bazar",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0014_8-Conini-Bazar.png",
-      cover_photo: "store_cover_photo_0014_8-Conini-Bazar-copia.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0014_8-Conini-Bazar.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0014_8-Conini-Bazar-copia.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 8,
@@ -152,8 +152,8 @@ Store.create([
     {
       name: "Dango Family",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0013_9-Dango-Family.png",
-      cover_photo: "store_cover_photo_0013_9-Dango-Family.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0013_9-Dango-Family.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0013_9-Dango-Family.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 9,
@@ -164,8 +164,8 @@ Store.create([
     {
       name: "Ufisa Pink Shop",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0012_10-Ufisa-Pink-Shop.png",
-      cover_photo: "store_cover_photo_0012_10-Ufisa-Pink-Shop.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0012_10-Ufisa-Pink-Shop.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0012_10-Ufisa-Pink-Shop.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 10,
@@ -176,8 +176,8 @@ Store.create([
     {
       name: "Pikaboo",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0011_11-Pikaboo.png",
-      cover_photo: "store_cover_photo_0011_11-Pikaboo.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0011_11-Pikaboo.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0011_11-Pikaboo.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 11,
@@ -188,8 +188,8 @@ Store.create([
     {
       name: "Embasémonos",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0010_12-Embasémonos.png",
-      cover_photo: "store_cover_photo_0010_12-Embasémonos.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0010_12-Embasémonos.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0010_12-Embasémonos.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 12,
@@ -200,8 +200,8 @@ Store.create([
     {
       name: "Mochilas de Lana",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0009_13-Mochilas-de-Lana.png",
-      cover_photo: "store_cover_photo_0009_13-Mochilas-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0009_13-Mochilas-de-Lana.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0009_13-Mochilas-de-Lana.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 13,
@@ -212,8 +212,8 @@ Store.create([
     {
       name: "The Culto Store",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0008_14-The-Culto-Store.png",
-      cover_photo: "store_cover_photo_0008_14-The-Culto-Store.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0008_14-The-Culto-Store.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0008_14-The-Culto-Store.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 14,
@@ -224,8 +224,8 @@ Store.create([
     {
       name: "Hydra",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0007_15-Hydra.png",
-      cover_photo: "store_cover_photo_0007_15-Hydra.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0007_15-Hydra.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0007_15-Hydra.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 15,
@@ -236,8 +236,8 @@ Store.create([
     {
       name: "Ruby Tuesday",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0006_16-Ruby-Tuesday.png",
-      cover_photo: "store_cover_photo_0006_16-Ruby-Tuesday.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0006_16-Ruby-Tuesday.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0006_16-Ruby-Tuesday.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 16,
@@ -248,8 +248,8 @@ Store.create([
     {
       name: "Külko",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0005_17-Külko.png",
-      cover_photo: "store_cover_photo_0005_17-Jülko.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0005_17-Külko.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0005_17-Jülko.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 17,
@@ -260,8 +260,8 @@ Store.create([
     {
       name: "Morenaa",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0004_18-Morenaa.png",
-      cover_photo: "store_cover_photo_0004_18-Morenaa.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0004_18-Morenaa.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0004_18-Morenaa.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 18,
@@ -272,8 +272,8 @@ Store.create([
     {
       name: "Tienda MCP",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0003_19-Tienda-MCP.png",
-      cover_photo: "store_cover_photo_0003_19-Tienda-MCP.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0003_19-Tienda-MCP.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0003_19-Tienda-MCP.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 19,
@@ -284,8 +284,8 @@ Store.create([
     {
       name: "Sharlie",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0002_20-Sharlie.png",
-      cover_photo: "store_cover_photo_0002_20-Sharlie.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0002_20-Sharlie.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0002_20-Sharlie.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 20,
@@ -296,8 +296,8 @@ Store.create([
     {
       name: "Frida Creaciones",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0001_21-Frida-Creaciones.png",
-      cover_photo: "store_cover_photo_0001_21-Frida-Creaciones.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0001_21-Frida-Creaciones.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0001_21-Frida-Creaciones.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 21,
@@ -308,8 +308,8 @@ Store.create([
     {
       name: "La Hacedora",
       description: Faker::Lorem.sentence(10),
-      photo: "store_photo_0000_La-Hacedora.png",
-      cover_photo: "store_cover_photo_0000_22-La-Hacedora.png",
+      photo: File.open(Rails.root + "app/assets/images/store_photo_0000_La-Hacedora.png"),
+      cover_photo: File.open(Rails.root + "app/assets/images/store_cover_photo_0000_22-La-Hacedora.png"),
       facebook_link: [nil, Faker::Internet.url("facebook.com")].sample,
       instagram_link: [nil, Faker::Internet.url("instagram.com")].sample,
       user_id: 22,
@@ -324,7 +324,7 @@ Product.create([
     {
       name: "Galaxy Bows",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0000_Galaxy-Bows.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0000_Galaxy-Bows.png"),
       price: 1000,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -334,7 +334,7 @@ Product.create([
     {
       name: "Taza Pusheen",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0001_Taza-Pusheen.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0001_Taza-Pusheen.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -344,7 +344,7 @@ Product.create([
     {
       name: "Peluditos con Gatos Rosado",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0002_Peludito-Gatos-Rosado.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0002_Peludito-Gatos-Rosado.png"),
       price: 7500,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -354,7 +354,7 @@ Product.create([
     {
       name: "Tattoo Choker",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0003_Tattoo-Choker.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0003_Tattoo-Choker.png"),
       price: 700,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -364,7 +364,7 @@ Product.create([
     {
       name: "Set de Calcetines con Gatos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0004_Set-Calcetines-Gatos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0004_Set-Calcetines-Gatos.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -374,7 +374,7 @@ Product.create([
     {
       name: "Cuaderno Arnold",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0005_Cuaderno-Arnold.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0005_Cuaderno-Arnold.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -384,7 +384,7 @@ Product.create([
     {
       name: "Bolso Frida Kahlo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0006_Bolso-Frida-Kahlo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0006_Bolso-Frida-Kahlo.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -394,7 +394,7 @@ Product.create([
     {
       name: "Bolso Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_1_0007_Bolso-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_1_0007_Bolso-Gato.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 1,
@@ -404,7 +404,7 @@ Product.create([
     {
       name: "Collar con Detalles Morados",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0000_Collar-Detalles-Morados.pngs",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0000_Collar-Detalles-Morados.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -414,7 +414,7 @@ Product.create([
     {
       name: "Collar Colgante Búhos Plateado",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0001_Colgante-Buhos-Plateado.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0001_Colgante-Buhos-Plateado.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -424,7 +424,7 @@ Product.create([
     {
       name: "Anillo con Piedras Rojizas",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0002_Anillo-Piedras-Rojizas.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0002_Anillo-Piedras-Rojizas.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -434,7 +434,7 @@ Product.create([
     {
       name: "Aros Hojas Dorados",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0003_Aros-Hojas-Dorados.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0003_Aros-Hojas-Dorados.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -444,7 +444,7 @@ Product.create([
     {
       name: "Pulsera Plateada con Mano de Fátima",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0004_Pulsera-Plateada.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0004_Pulsera-Plateada.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -454,7 +454,7 @@ Product.create([
     {
       name: "Aros Espiral Dorados",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_2_0005_Aros-Espiral-Dorados.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_2_0005_Aros-Espiral-Dorados.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 2,
@@ -464,7 +464,7 @@ Product.create([
     {
       name: "Gorro Totoro",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0000_Gorro-Totoro.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0000_Gorro-Totoro.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -474,7 +474,7 @@ Product.create([
     {
       name: "Anillo Meow Dorado",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0001_Anillo-Meow-Dorado.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0001_Anillo-Meow-Dorado.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -484,7 +484,7 @@ Product.create([
     {
       name: "Anillo Meow Plateado",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0002_Anillo-Meow-Plateado.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0002_Anillo-Meow-Plateado.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -494,7 +494,7 @@ Product.create([
     {
       name: "Aros Meow",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0003_Aros-Meow.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0003_Aros-Meow.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -504,7 +504,7 @@ Product.create([
     {
       name: "Aros Jake",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0004_Aros-Jake.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0004_Aros-Jake.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -514,7 +514,7 @@ Product.create([
     {
       name: "Llavero Meow",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0005_Llavero-Meow.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0005_Llavero-Meow.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -524,7 +524,7 @@ Product.create([
     {
       name: "Aros Frida Kahlo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_3_0006_Aros-Frida-Kahlo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_3_0006_Aros-Frida-Kahlo.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 3,
@@ -534,7 +534,7 @@ Product.create([
     {
       name: "Poncho Tejido con Detalle Floral",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_4_0000_Poncho-Tejido-Detalle-Floral.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_4_0000_Poncho-Tejido-Detalle-Floral.png"),
       price: 11000,
       stock: Faker::Number.between(1, 15),
       store_id: 4,
@@ -544,7 +544,7 @@ Product.create([
     {
       name: "Vestido Azul Marino con Detalles Florales",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_4_0001_Vestido-Azul-Marino-Detalles-Florales.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_4_0001_Vestido-Azul-Marino-Detalles-Florales.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 4,
@@ -554,7 +554,7 @@ Product.create([
     {
       name: "Collar Inspirado en África",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_4_0002_Collar-Inspirado-en-África-3.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_4_0002_Collar-Inspirado-en-África-3.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 4,
@@ -564,7 +564,7 @@ Product.create([
     {
       name: "Collar Inspirado en África",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_4_0003_Collar-Inspirado-en-África-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_4_0003_Collar-Inspirado-en-África-2.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 4,
@@ -574,7 +574,7 @@ Product.create([
     {
       name: "Collar Inspirado en África",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_4_0004_Collar-Inspirado-en-África-1.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_4_0004_Collar-Inspirado-en-África-1.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 4,
@@ -584,7 +584,7 @@ Product.create([
     {
       name: "Llavero Príncipe Sapo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_5_0000_Llaver-Príncipe-Sapo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_5_0000_Llaver-Príncipe-Sapo.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 5,
@@ -594,7 +594,7 @@ Product.create([
     {
       name: "Llavero Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_5_0001_Llavero-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_5_0001_Llavero-Gato.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 5,
@@ -604,7 +604,7 @@ Product.create([
     {
       name: "Llavero Profesión Personalizable",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_5_0002_Llavero-Profesión-Personalizable.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_5_0002_Llavero-Profesión-Personalizable.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 5,
@@ -614,7 +614,7 @@ Product.create([
     {
       name: "Llavero Pareja Personalizable",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_5_0003_Llavero-Pareja-Personalizable.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_5_0003_Llavero-Pareja-Personalizable.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 5,
@@ -624,7 +624,7 @@ Product.create([
     {
       name: "Muñeco Selk'nam",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_6_0000_Muñeco-Selk'nam.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_6_0000_Muñeco-Selk'nam.png"),
       price: 14000,
       stock: Faker::Number.between(1, 15),
       store_id: 6,
@@ -634,7 +634,7 @@ Product.create([
     {
       name: "Muñeca Violeta Parra",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_6_0001_Muñeca-Violeta-Parra.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_6_0001_Muñeca-Violeta-Parra.png"),
       price: 14000,
       stock: Faker::Number.between(1, 15),
       store_id: 6,
@@ -644,7 +644,7 @@ Product.create([
     {
       name: "Muñeco Pingüino de Humboldt",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_6_0002_Muñeco-Pingüino-de-Humboldt.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_6_0002_Muñeco-Pingüino-de-Humboldt.png"),
       price: 14000,
       stock: Faker::Number.between(1, 15),
       store_id: 6,
@@ -654,7 +654,7 @@ Product.create([
     {
       name: "Muñeco Zorro Chilote",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_6_0003_Muñeco-Zorro-Chilote.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_6_0003_Muñeco-Zorro-Chilote.png"),
       price: 14000,
       stock: Faker::Number.between(1, 15),
       store_id: 6,
@@ -664,7 +664,7 @@ Product.create([
     {
       name: "Choker Crochet con Monedas",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0000_Choker-Crochet-con-Monedas.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0000_Choker-Crochet-con-Monedas.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -674,7 +674,7 @@ Product.create([
     {
       name: "Collar Doble con Elefante",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0001_Collar-Doble-Elefante.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0001_Collar-Doble-Elefante.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -684,7 +684,7 @@ Product.create([
     {
       name: "Collar Tonos Otoñales",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0002_Collar-Tonos-Otoñales.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0002_Collar-Tonos-Otoñales.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -694,7 +694,7 @@ Product.create([
     {
       name: "Collar Doble con Mano de Fátima y Piedra Onix",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0003_Collar-Doble-Mano-Fátima-Piedra-Onix.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0003_Collar-Doble-Mano-Fátima-Piedra-Onix.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -704,7 +704,7 @@ Product.create([
     {
       name: "Choker Velvet con Piedra Luna",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0004_Choker-Piedra-Luna.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0004_Choker-Piedra-Luna.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -714,7 +714,7 @@ Product.create([
     {
       name: "Collar con Piedras de Cuarzo y Árbol de la Vida",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0005_Collar-Piedras-Cuarzo-Árbol-de-la-Vida.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0005_Collar-Piedras-Cuarzo-Árbol-de-la-Vida.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -724,7 +724,7 @@ Product.create([
     {
       name: "Collar con Plumas Envejecido",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_7_0006_Collar-Plumas-Envejecido.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_7_0006_Collar-Plumas-Envejecido.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 7,
@@ -734,7 +734,7 @@ Product.create([
     {
       name: "Crop Top Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_8_0000_Polera-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_8_0000_Polera-Gato.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 8,
@@ -744,7 +744,7 @@ Product.create([
     {
       name: "Polera Flores",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_8_0001_Polera-Flores.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_8_0001_Polera-Flores.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 8,
@@ -754,7 +754,7 @@ Product.create([
     {
       name: "Crop Top Pájaro",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_8_0002_Polera-Pájaro.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_8_0002_Polera-Pájaro.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 8,
@@ -764,7 +764,7 @@ Product.create([
     {
       name: "Crop Top Elefante Feliz",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_8_0003_Polera-Elefante.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_8_0003_Polera-Elefante.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 8,
@@ -774,7 +774,7 @@ Product.create([
     {
       name: "Monedero Gatito",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0000_Monedero-Gatito.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0000_Monedero-Gatito.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -784,7 +784,7 @@ Product.create([
     {
       name: "Lápices Corona",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0001_Lápices-Corona.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0001_Lápices-Corona.png"),
       price: 1000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -794,7 +794,7 @@ Product.create([
     {
       name: "Lápices Gatito",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0002_Lápices-Gatitos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0002_Lápices-Gatitos.png"),
       price: 1000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -804,7 +804,7 @@ Product.create([
     {
       name: "Lápices Monster con Bigotes",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0003_Lápices-Monster-Bigotes.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0003_Lápices-Monster-Bigotes.png"),
       price: 1000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -814,7 +814,7 @@ Product.create([
     {
       name: "Cosmetiquero Panda Plush",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0004_Cosmetiquero-Panda-Plush.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0004_Cosmetiquero-Panda-Plush.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -824,7 +824,7 @@ Product.create([
     {
       name: "Estuche Gatitos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0005_Estuche-Gatitos-3.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0005_Estuche-Gatitos-3.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -834,7 +834,7 @@ Product.create([
     {
       name: "Estuche Gatitos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0006_Estuche-Gatitos-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0006_Estuche-Gatitos-2.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -844,7 +844,7 @@ Product.create([
     {
       name: "Estuche Gatitos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_9_0007_Estuche-Gatitos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_9_0007_Estuche-Gatitos.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 9,
@@ -854,7 +854,7 @@ Product.create([
     {
       name: "Billetera Amarilla Gatos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0000_Billetera-Amarilla-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0000_Billetera-Amarilla-Gato.png"),
       price: 11000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -864,7 +864,7 @@ Product.create([
     {
       name: "Billetera Morada",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0001_Billetera-Morada.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0001_Billetera-Morada.png"),
       price: 11000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -874,7 +874,7 @@ Product.create([
     {
       name: "Polerón Hámster",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0002_Polerón-Hámster.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0002_Polerón-Hámster.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -884,7 +884,7 @@ Product.create([
     {
       name: "Polerón Conejo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0003_Polerón-Conejo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0003_Polerón-Conejo.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -894,7 +894,7 @@ Product.create([
     {
       name: "Polerón Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0004_Polerón-Gato-3.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0004_Polerón-Gato-3.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -904,7 +904,7 @@ Product.create([
     {
       name: "Polerón Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0005_Polerón-Gato-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0005_Polerón-Gato-2.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -914,7 +914,7 @@ Product.create([
     {
       name: "Polerón Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_10_0006_Polerón-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_10_0006_Polerón-Gato.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 10,
@@ -924,7 +924,7 @@ Product.create([
     {
       name: "Muñeco Capitán América",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_11_0000_Muñeco-Capitán-América.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_11_0000_Muñeco-Capitán-América.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 11,
@@ -934,7 +934,7 @@ Product.create([
     {
       name: "Muñeco Minion Súperman",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_11_0001_Muñeco-Minion-Superman.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_11_0001_Muñeco-Minion-Superman.png"),
       price: 11000,
       stock: Faker::Number.between(1, 15),
       store_id: 11,
@@ -944,7 +944,7 @@ Product.create([
     {
       name: "Muñeca Anna",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_11_0002_Muñeca-Ana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_11_0002_Muñeca-Ana.png"),
       price: 12000,
       stock: Faker::Number.between(1, 15),
       store_id: 11,
@@ -954,7 +954,7 @@ Product.create([
     {
       name: "Muñeco Spiderman",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_11_0003_Muñeco-Spiderman.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_11_0003_Muñeco-Spiderman.png"),
       price: 8000,
       stock: Faker::Number.between(1, 15),
       store_id: 11,
@@ -964,7 +964,7 @@ Product.create([
     {
       name: "Dulces Boo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0000_Dulces-Boo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0000_Dulces-Boo.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -974,7 +974,7 @@ Product.create([
     {
       name: "Dulces Psyduck",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0001_Dulces-Cyberduck.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0001_Dulces-Cyberduck.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -984,7 +984,7 @@ Product.create([
     {
       name: "Galletas Cookie Monster",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0002_Galletas-Cookie-Monster.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0002_Galletas-Cookie-Monster.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -994,7 +994,7 @@ Product.create([
     {
       name: "Pastillas Para la Buena Suerte de Eugene",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0003_Pastillas-para-la-Buena-SUerte-Eugene.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0003_Pastillas-para-la-Buena-SUerte-Eugene.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -1004,7 +1004,7 @@ Product.create([
     {
       name: "Pastillas para la Memora de Dory",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0004_Pastillas-para-la-Memoria-Dory.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0004_Pastillas-para-la-Memoria-Dory.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -1014,7 +1014,7 @@ Product.create([
     {
       name: "Pastillas de Poder de Goku",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_12_0005_Pastillas-de-Poder-Goku.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_12_0005_Pastillas-de-Poder-Goku.png"),
       price: 5500,
       stock: Faker::Number.between(1, 15),
       store_id: 12,
@@ -1024,7 +1024,7 @@ Product.create([
     {
       name: "Mochila de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0000_Bati-Mochila-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0000_Bati-Mochila-de-Lana.png"),
       price: 15000,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1034,7 +1034,7 @@ Product.create([
     {
       name: "Mochila de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0001_Mochila-de-Lana-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0001_Mochila-de-Lana-2.png"),
       price: 14000,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1044,7 +1044,7 @@ Product.create([
     {
       name: "Mochila de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0002_Mochila-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0002_Mochila-de-Lana.png"),
       price: 13000,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1054,7 +1054,7 @@ Product.create([
     {
       name: "Billetera de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0003_Billetera-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0003_Billetera-de-Lana.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1064,7 +1064,7 @@ Product.create([
     {
       name: "Monedero de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0004_Monedero-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0004_Monedero-de-Lana.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1074,7 +1074,7 @@ Product.create([
     {
       name: "Monedero Triangular de Lana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_13_0005_Monedero-Triangular-de-Lana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_13_0005_Monedero-Triangular-de-Lana.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 13,
@@ -1084,7 +1084,7 @@ Product.create([
     {
       name: "Snitch Dorada",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0000_Collar-Snitch-Dorada.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0000_Collar-Snitch-Dorada.png"),
       price: 6500,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1094,7 +1094,7 @@ Product.create([
     {
       name: "Collar Casa Stark",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0001_Collar-Casa-Stark.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0001_Collar-Casa-Stark.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1104,7 +1104,7 @@ Product.create([
     {
       name: "Collar Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0002_Collar-Gato-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0002_Collar-Gato-2.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1114,7 +1114,7 @@ Product.create([
     {
       name: "Llavero Darth Vader",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0003_Llavero-Darth-Vader.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0003_Llavero-Darth-Vader.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1124,7 +1124,7 @@ Product.create([
     {
       name: "Collar Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0004_Collar-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0004_Collar-Gato.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1134,7 +1134,7 @@ Product.create([
     {
       name: "Reloj Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0005_Reloj-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0005_Reloj-Gato.png"),
       price: 6500,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1144,7 +1144,7 @@ Product.create([
     {
       name: "Audífonos Baymax",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0006_Audífonos-Baymax.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0006_Audífonos-Baymax.png"),
       price: 9500,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1154,7 +1154,7 @@ Product.create([
     {
       name: "Pin Mano del Rey",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0007_Pin-Mano-de-Rey.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0007_Pin-Mano-de-Rey.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1164,7 +1164,7 @@ Product.create([
     {
       name: "Collar Espada Game of Thrones",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0008_Collar-Espada-Games-Of-Thrones.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0008_Collar-Espada-Games-Of-Thrones.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1174,7 +1174,7 @@ Product.create([
     {
       name: "Aros Giratiempo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0009_Aros-Gira-Tiempo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0009_Aros-Gira-Tiempo.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1184,7 +1184,7 @@ Product.create([
     {
       name: "Collar Giratiempo",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0010_Collar-Gira-Tiempo.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0010_Collar-Gira-Tiempo.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1194,7 +1194,7 @@ Product.create([
     {
       name: "Pendrive BB8",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_14_0011_Pendrive-BB8.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_14_0011_Pendrive-BB8.png"),
       price: 13000,
       stock: Faker::Number.between(1, 15),
       store_id: 14,
@@ -1204,7 +1204,7 @@ Product.create([
     {
       name: "Crop Top",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0000_Crop-Top-Lanilla.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0000_Crop-Top-Lanilla.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1214,7 +1214,7 @@ Product.create([
     {
       name: "Vestido Modelo Corazón",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0001_Vestido-Modelo-Corazón.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0001_Vestido-Modelo-Corazón.png"),
       price: 5000,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1224,7 +1224,7 @@ Product.create([
     {
       name: "Bolsa Calavera Mexicana",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0002_Bolsa-Cordones-Calavera-Mexicana.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0002_Bolsa-Cordones-Calavera-Mexicana.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1234,7 +1234,7 @@ Product.create([
     {
       name: "Cojín Ariel Alternativa",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0003_Funda-para-Cojín-Ariel-Alternativa.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0003_Funda-para-Cojín-Ariel-Alternativa.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1244,7 +1244,7 @@ Product.create([
     {
       name: "Bolsa Negra Puntos Blancos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0004_Bolsa-Negra-Puntos-Blancos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0004_Bolsa-Negra-Puntos-Blancos.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1254,7 +1254,7 @@ Product.create([
     {
       name: "Vestido Negro Puntos Blancos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_15_0005_Vestido-Negro-Puntos-Blancos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_15_0005_Vestido-Negro-Puntos-Blancos.png"),
       price: 5500,
       stock: Faker::Number.between(1, 15),
       store_id: 15,
@@ -1264,7 +1264,7 @@ Product.create([
      {
       name: "Polera Gris Detalle Cuello",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_16_0000_Polera-Gris-Detalle-Cuello.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_16_0000_Polera-Gris-Detalle-Cuello.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 16,
@@ -1274,7 +1274,7 @@ Product.create([
     {
       name: "Polera Negra Detalles Blancos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_16_0001_Polera-Negra-Detalles-Blancos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_16_0001_Polera-Negra-Detalles-Blancos.png"),
       price: 5500,
       stock: Faker::Number.between(1, 15),
       store_id: 16,
@@ -1284,7 +1284,7 @@ Product.create([
     {
       name: "Chaleco Negro Corazones Blancos",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_16_0002_Chaleco-Negro-Corazones-Blancos.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_16_0002_Chaleco-Negro-Corazones-Blancos.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 16,
@@ -1294,7 +1294,7 @@ Product.create([
     {
       name: "Polerón Gris Detalle Cuello",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_16_0003_Polerón-Gris-Detalle-Cuello.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_16_0003_Polerón-Gris-Detalle-Cuello.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 16,
@@ -1304,7 +1304,7 @@ Product.create([
     {
       name: "Pack de 6 Cupcakes Personalizados",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_17_0000_Cupcakes.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_17_0000_Cupcakes.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 17,
@@ -1314,7 +1314,7 @@ Product.create([
     {
       name: "Cesta Gourmet",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_17_0001_Cesta-Gourmet-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_17_0001_Cesta-Gourmet-2.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 17,
@@ -1324,7 +1324,7 @@ Product.create([
     {
       name: "Cesta Gourmet",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_17_0002_Cesta-Gourmet.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_17_0002_Cesta-Gourmet.png"),
       price: 9000,
       stock: Faker::Number.between(1, 15),
       store_id: 17,
@@ -1334,7 +1334,7 @@ Product.create([
     {
       name: "Cartera Bordada",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_18_0000_Cartera-Bordada-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_18_0000_Cartera-Bordada-2.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 18,
@@ -1344,7 +1344,7 @@ Product.create([
     {
       name: "Cartera Bordada",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_18_0001_Cartera-Bordada.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_18_0001_Cartera-Bordada.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 18,
@@ -1354,7 +1354,7 @@ Product.create([
     {
       name: "Aros",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_18_0002_Aros-3.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_18_0002_Aros-3.png"),
       price: 1500,
       stock: Faker::Number.between(1, 15),
       store_id: 18,
@@ -1364,7 +1364,7 @@ Product.create([
     {  
       name: "Aros",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_18_0003_Aros-2.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_18_0003_Aros-2.png"),
       price: 1200,
       stock: Faker::Number.between(1, 15),
       store_id: 18,
@@ -1374,7 +1374,7 @@ Product.create([
     {
       name: "Aros",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_18_0004_Aros-1.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_18_0004_Aros-1.png"),
       price: 900,
       stock: Faker::Number.between(1, 15),
       store_id: 18,
@@ -1384,7 +1384,7 @@ Product.create([
     {
       name: "Polera Flecos Beige",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_19_0000_Polera-Flecos-Beige.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_19_0000_Polera-Flecos-Beige.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 19,
@@ -1394,7 +1394,7 @@ Product.create([
     {
       name: "Vestido Rojo de Encaje",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_19_0001_Vestido-Encaje.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_19_0001_Vestido-Encaje.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 19,
@@ -1404,7 +1404,7 @@ Product.create([
     {  
       name: "Chalas Multicolor",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_19_0002_Chalas-Multicolor.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_19_0002_Chalas-Multicolor.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 19,
@@ -1414,7 +1414,7 @@ Product.create([
     {
       name: "Cartera de Mano",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_20_0000_Cartera-de-Mano.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_20_0000_Cartera-de-Mano.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 20,
@@ -1424,7 +1424,7 @@ Product.create([
     {
       name: "Estuche",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_20_0001_Estuche.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_20_0001_Estuche.png"),
       price: 3500,
       stock: Faker::Number.between(1, 15),
       store_id: 20,
@@ -1434,7 +1434,7 @@ Product.create([
     {
       name: "Adorno Banderines",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0000_Adorno-Banderines.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0000_Adorno-Banderines.png"),
       price: 7000,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1444,7 +1444,7 @@ Product.create([
     {
       name: "Estuche de Tela",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0001_Estuche.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0001_Estuche.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1454,7 +1454,7 @@ Product.create([
     {
       name: "Billetera de Tela",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0002_Billetera.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0002_Billetera.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1464,7 +1464,7 @@ Product.create([
     {
       name: "Adornos Calaveras Mexicanas",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0003_Adornos-Calaveras-Mexicanas.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0003_Adornos-Calaveras-Mexicanas.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1474,7 +1474,7 @@ Product.create([
     {
       name: "Adornos Matrioska",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0004_Adorno-Matriuskas.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0004_Adorno-Matriuskas.png"),
       price: 2000,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1484,7 +1484,7 @@ Product.create([
     {
       name: "Muñeco Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_21_0005_Muñeco-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_21_0005_Muñeco-Gato.png"),
       price: 4500,
       stock: Faker::Number.between(1, 15),
       store_id: 21,
@@ -1494,7 +1494,7 @@ Product.create([
     {
       name: "Macetero Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_22_0000_Macetero-para-Cactus-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_22_0000_Macetero-para-Cactus-Gato.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 22,
@@ -1504,7 +1504,7 @@ Product.create([
     {
       name: "Collar de Gato",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_22_0001_Collar-Gato.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_22_0001_Collar-Gato.png"),
       price: 3000,
       stock: Faker::Number.between(1, 15),
       store_id: 22,
@@ -1514,7 +1514,7 @@ Product.create([
     {
       name: "Figura de Perro",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_22_0002_Figura-Perro.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_22_0002_Figura-Perro.png"),
       price: 4000,
       stock: Faker::Number.between(1, 15),
       store_id: 22,
@@ -1524,7 +1524,7 @@ Product.create([
     {
       name: "Macetero Llama",
       description: Faker::Lorem.sentence(5),
-      photo: "product_photo_store_22_0003_Macetero-para-Cactus-Llama.png",
+      photo: File.open(Rails.root + "app/assets/images/product_photo_store_22_0003_Macetero-para-Cactus-Llama.png"),
       price: 6000,
       stock: Faker::Number.between(1, 15),
       store_id: 22,

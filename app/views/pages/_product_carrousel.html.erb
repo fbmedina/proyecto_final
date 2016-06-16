@@ -1,6 +1,6 @@
 <div class="col-12 no-padding">
 	<ul class="bxslider">
-		<% @products.each do |product| %>
+		<% @products.sample(6).each do |product| %>
 			<li class="col-4 half-padding relative">
 				<%= link_to image_tag(product.photo), [product.store, product], class: "under" %>
 				<div class="gradient-for-carrousel-product"></div>
