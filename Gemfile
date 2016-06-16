@@ -56,6 +56,8 @@ gem 'puma'
 
 gem 'dotenv-rails'
 
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -76,7 +78,6 @@ group :development do
 
   gem 'better_errors'
 
-  gem 'faker'
 
   gem 'capistrano', require: false
   gem 'capistrano-bundler', require: false
