@@ -17,9 +17,9 @@
 	</div>
 	
 	<div class="col-2 col-offset-2 myMenu half-padding">
-		<ul class="dropDownMenu">
+		<ul class="dropDownMenu white">
 			<li><%= link_to image_tag(current_user.avatar), "#", class: "circle less-size" %>
-				<ul>
+				<ul class="bold">
 					<% current_user.user_wishlists.each do |user_wishlist| %>
 						<li><%= link_to "#{user_wishlist.wishlist.name} (#{user_wishlist.products.count})", [current_user, user_wishlist] %></li>
 					<% end %>

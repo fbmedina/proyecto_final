@@ -14,9 +14,9 @@
 
 	<main class="col-12 no-padding">
 		<% if notice %>
-			<div class="col-12 other-background top white text-center row"><p class="bold"><%= notice %></p></div>
+			<div class="col-12 other-background top white text-center row alert"><p class="bold"><%= notice %></p></div>
 		<% elsif alert %>
-			<div class="col-12 other-background top white text-center row"><p class="bold"><%= alert %></p></div>
+			<div class="col-12 other-background top white text-center row alert"><p class="bold"><%= alert %></p></div>
 		<% end %>
 		
 		<%= yield %>
