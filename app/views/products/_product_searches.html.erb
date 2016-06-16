@@ -1,5 +1,5 @@
 <div class="row"></div>
-<% @products.each do |product| %>
+<% @products.order("RANDOM()").each do |product| %>
 
   <div class="col-4 col-offset-1 no-padding relative">
     <%= link_to image_tag(product.photo), [product.store, product], class: "under" %>
